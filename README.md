@@ -1,5 +1,5 @@
 # ❗❗❗IMPORTANT❗❗❗
-### - Always run ```git pull``` to any branches you are branching out
+### - Always run ```git pull origin [branch you are currently]``` to any branches you are branching out
 
 # ⚠️Installation
 ### - Run ```npm install```
