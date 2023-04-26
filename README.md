@@ -1,3 +1,6 @@
+# ❗❗❗IMPORTANT❗❗❗
+### - Always run ```git pull``` to any branches you are branching out
+
 # ⚠️Installation
 ### - Run ```npm install```
 
@@ -8,3 +11,6 @@
 ### - Switch to ```develop``` branch and create your own branch origin to ```develop```
 ### - ```git switch develop```
 ### - follow this branch formatting ```git checkout -b 'name/date'```
+
+# ⚠️Running the Application
+### - ```npm run dev```
