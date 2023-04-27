@@ -11,6 +11,8 @@ import { useSidebarStyle } from '../Assets/Styles/MainLayoutStyles';
 import CompanyHeading from '../Modules/Layout/CompanyHeading';
 import Sidebar from '../Modules/Layout/Sidebar';
 import User from '../Modules/Layout/User';
+import Notification from '../Modules/Layout/Notification';
+import Announcement from '../Modules/Layout/Announcement';
 
 function Main() {
   const Style = useSidebarStyle();
@@ -30,7 +32,19 @@ function Main() {
           className="bi bi-list toggle-sidebar-btn"
           onClick={() => HandleSidebarToggle()}
         />
-        <User />
+        <Box
+          style={{
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'end',
+            marginRight: 20,
+            gap: 10,
+          }}
+        >
+          <Announcement />
+          <Notification />
+          <User />
+        </Box>
       </Box>
       <Box id="aside" className={Style.sidebar}>
         <Sidebar />
