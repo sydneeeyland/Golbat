@@ -2,7 +2,7 @@
 // Pages
 import { Dashboard, Packinglist } from '../../Pages';
 
-export const DefaultRoute = [
+export const PrivateRoute = [
   {
     key: 'Dashboard',
     element: Dashboard,
