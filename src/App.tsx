@@ -10,9 +10,11 @@ import { PageNotFound } from './Pages';
 
 // Middleware
 import ApplicationStatus from './Middleware/ApplicationStatus';
+import ValidateAuth from './Middleware/ValidateAuth';
+import ValidatePermission from './Middleware/ValidatePermission';
 
 // Constant
-import { DefaultRoute } from './Constant/Route/Default';
+import { PrivateRoute } from './Constant/Route/Default';
 
 // Layout
 export const Main = lazy(() => import('./Layout/Main'));
@@ -22,17 +24,22 @@ export default function App() {
     <Router>
       <Suspense fallback={<LoadingBackdrop />}>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <ApplicationStatus>
-                <Main />
-              </ApplicationStatus>
-            }
-          >
-            {DefaultRoute.map(({ key, path, element: Page }) => (
-              <Route key={key} path={path} element={<Page />} />
-            ))}
+          <Route element={<ApplicationStatus />}>
+            <Route element={<ValidateAuth />}>
+              <Route path="/" element={<Main />}>
+                {PrivateRoute.map(({ key, path, element: Page }) => (
+                  <Route
+                    key={key}
+                    path={path}
+                    element={
+                      <ValidatePermission route={key}>
+                        <Page />
+                      </ValidatePermission>
+                    }
+                  />
+                ))}
+              </Route>
+            </Route>
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>

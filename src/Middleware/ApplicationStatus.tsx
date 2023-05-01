@@ -1,5 +1,6 @@
 // Package
-import { ReactNode, lazy } from 'react';
+import { lazy } from 'react';
+import { Outlet } from 'react-router-dom';
 
 // Components
 import { NoSsr } from '@mui/material';
@@ -11,14 +12,10 @@ const Maintenance = lazy(() =>
   })
 );
 
-type Props = {
-  children: ReactNode;
-};
-
-function ApplicationStatus({ children }: Props) {
+function ApplicationStatus() {
   const MaintenanceMode = false;
 
-  return <NoSsr defer>{MaintenanceMode ? <Maintenance /> : children}</NoSsr>;
+  return <NoSsr defer>{MaintenanceMode ? <Maintenance /> : <Outlet />}</NoSsr>;
 }
 
 export default ApplicationStatus;
