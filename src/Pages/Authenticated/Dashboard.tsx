@@ -1,5 +1,4 @@
 // Pages
-import { useNavigate } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
 // Components
