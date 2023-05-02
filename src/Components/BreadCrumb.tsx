@@ -45,7 +45,7 @@ function Breadcrumb({ page }: Props) {
   }, [page]);
 
   return (
-    <Box sx={{ marginBottom: 20 }}>
+    <Box sx={{ marginBottom: '20px' }}>
       <Breadcrumbs aria-label="breadcrumb">
         <StyledBreadcrumb
           label="Home"
