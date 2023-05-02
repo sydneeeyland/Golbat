@@ -1,4 +1,4 @@
-// Pages
+// Package
 import { ErrorBoundary } from 'react-error-boundary';
 
 // Components
@@ -8,7 +8,7 @@ import FormContainer from '../../Components/Container/FormContainer';
 
 // Middleware
 import ErrorFallback from '../../Middleware/ErrorFallback';
-import ActionTab from '../../Components/Form/ActionTab';
+import ActionButton from '../../Components/Form/ActionButton';
 
 function Dashboard() {
   return (
@@ -18,7 +18,7 @@ function Dashboard() {
       </ErrorBoundary>
       <FormContainer>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <ActionTab />
+          <ActionButton module="packinglist" />
         </ErrorBoundary>
       </FormContainer>
     </NoSsr>

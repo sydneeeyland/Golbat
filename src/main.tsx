@@ -1,10 +1,13 @@
 // Package
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ErrorBoundary } from 'react-error-boundary';
+import { Provider } from 'react-redux';
 
 // Components
 import { ThemeProvider } from '@mui/material';
+
+// Store
+import store from './Redux/store';
 
 // Application
 import App from './App';
@@ -19,11 +22,11 @@ import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <ErrorBoundary FallbackComponent={AppErrorFallBack}>
+  <ThemeProvider theme={theme}>
+    <ErrorBoundary FallbackComponent={AppErrorFallBack}>
+      <Provider store={store}>
         <App />
-      </ErrorBoundary>
-    </ThemeProvider>
-  </React.StrictMode>
+      </Provider>
+    </ErrorBoundary>
+  </ThemeProvider>
 );
