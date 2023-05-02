@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/111341078/235809298-6e2d9f6c-5124-4955-b906-8dbe3a2fd6a5.png)
+
 # ❗❗❗IMPORTANT❗❗❗
 ### - Always run ```git pull origin [branch you are currently]``` to any branches you are branching out
 
