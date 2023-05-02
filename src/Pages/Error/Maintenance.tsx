@@ -1,7 +1,5 @@
 // Components
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import NoSsr from '@mui/material/NoSsr';
+import { Box, Typography, NoSsr } from '@mui/material';
 
 // Styles
 import { useMaintenanceStyles } from '../../Assets/Styles/MaintenanceStyles';
