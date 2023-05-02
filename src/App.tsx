@@ -1,5 +1,6 @@
 // Package
 import { Suspense, lazy } from 'react';
+// import { useSelector } from 'react-redux';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
@@ -20,6 +21,9 @@ import { PrivateRoute } from './Constant/Route/Default';
 export const Main = lazy(() => import('./Layout/Main'));
 
 export default function App() {
+  // const Store = useSelector((state) => state);
+
+  // console.log(Store);
   return (
     <Router>
       <Suspense fallback={<LoadingBackdrop />}>
