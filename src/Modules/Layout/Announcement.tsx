@@ -1,4 +1,3 @@
-// Packages
 import { IconButton, Badge } from '@mui/material';
 import { CampaignOutlined } from '@mui/icons-material';
 

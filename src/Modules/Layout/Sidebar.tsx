@@ -1,13 +1,9 @@
-// Package
 import { NavLink } from 'react-router-dom';
 
-// Component
 import { Box, NoSsr } from '@mui/material';
 
-// Constant
 import { Default as SidebarConfig } from '../../Constant/Sidebar/Default';
 
-// Style
 import { useSidebarListStyle } from '../../Assets/Styles/MainLayoutStyles';
 
 function Sidebar() {

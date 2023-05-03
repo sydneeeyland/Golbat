@@ -1,4 +1,3 @@
-// Components
 import { NoSsr } from '@mui/material';
 
 function PageNotFound() {

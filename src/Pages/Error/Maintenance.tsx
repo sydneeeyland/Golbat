@@ -1,7 +1,5 @@
-// Components
 import { Box, Typography, NoSsr } from '@mui/material';
 
-// Styles
 import { useMaintenanceStyles } from '../../Assets/Styles/MaintenanceStyles';
 
 function Maintenance() {
