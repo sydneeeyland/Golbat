@@ -1,7 +1,5 @@
-// Package
 import { useState, memo, useCallback } from 'react';
 
-// Components
 import {
   NoSsr,
   Box,
@@ -15,7 +13,6 @@ import {
 } from '@mui/material';
 import { Settings, Logout } from '@mui/icons-material';
 
-// Style
 import { UserMenuPaperProps } from '../../Assets/Styles/MainLayoutStyles';
 
 function User() {

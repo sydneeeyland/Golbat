@@ -1,7 +1,5 @@
-// Package
 import { memo } from 'react';
 
-// Component
 import { Box, Alert } from '@mui/material';
 
 type Props = {

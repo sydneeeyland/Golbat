@@ -1,16 +1,12 @@
-// Package
 import { useEffect, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Component
 import { Box } from '@mui/material';
 
-// Style
 import { emphasize, styled } from '@mui/material/styles';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Chip from '@mui/material/Chip';
 
-// Icons
 import HomeIcon from '@mui/icons-material/Home';
 
 type Props = {

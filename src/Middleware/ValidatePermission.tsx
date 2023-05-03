@@ -1,10 +1,7 @@
-// Package
 import { ReactNode } from 'react';
 
-// Components
 import { NoSsr } from '@mui/material';
 
-// Pages
 import { Unauthorized } from '../Pages';
 
 type Props = {

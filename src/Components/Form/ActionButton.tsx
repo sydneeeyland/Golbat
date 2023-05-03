@@ -1,10 +1,7 @@
-// Package
 import { useState, memo, useCallback } from 'react';
 
-// Icons
 import { CloudSync, AddCircle } from '@mui/icons-material';
 
-// Components
 import { Stack, Button, Box } from '@mui/material';
 
 type Props = {

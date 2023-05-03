@@ -1,10 +1,7 @@
-// Package
 import { ReactNode } from 'react';
 
-// Components
 import { Box } from '@mui/material';
 
-// Styles
 import { useActionContainerStyles } from '../../Assets/Styles/ContainerStyle';
 
 type Props = {
