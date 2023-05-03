@@ -1,13 +1,9 @@
-// Package
 import { Outlet } from 'react-router-dom';
 
-// Components
 import { NoSsr, Box } from '@mui/material';
 
-// Styles
 import { useSidebarStyle } from '../Assets/Styles/MainLayoutStyles';
 
-// Modules
 import CompanyHeading from '../Modules/Layout/CompanyHeading';
 import Sidebar from '../Modules/Layout/Sidebar';
 import User from '../Modules/Layout/User';

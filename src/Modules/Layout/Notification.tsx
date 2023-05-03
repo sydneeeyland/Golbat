@@ -1,4 +1,3 @@
-// Components
 import { IconButton, Badge } from '@mui/material';
 import { NotificationsOutlined } from '@mui/icons-material';
 
