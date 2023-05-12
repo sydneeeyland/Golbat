@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 // Slice
-import authReducer from './auth-slice';
-import applicationReducer from './application-slice';
-import transactionReducer from './transaction-slice';
-import permissionReducer from './permission-slice';
+import authReducer from './Slice/auth-slice';
+import applicationReducer from './Slice/application-slice';
+import transactionReducer from './Slice/transaction-slice';
+import permissionReducer from './Slice/permission-slice';
 
 const store = configureStore({
   reducer: {

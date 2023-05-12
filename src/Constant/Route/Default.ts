@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-// Pages
 import { Dashboard, Packinglist } from '../../Pages';
 
 export const PrivateRoute = [

@@ -22,13 +22,16 @@
     "@reduxjs/toolkit": "^1.9.5",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.4",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.4",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
-    "styled-components": "^5.3.10"
+    "react-table": "^7.8.0",
+    "styled-components": "^5.3.10",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -52,6 +52,7 @@ function User() {
         PaperProps={UserMenuPaperProps}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        sx={{ left: -5 }}
       >
         <MenuItem onClick={handleClose}>
           <Avatar /> My statistics

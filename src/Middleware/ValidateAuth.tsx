@@ -10,6 +10,7 @@ const SignIn = lazy(() =>
 );
 
 function ValidateAuth() {
+  // TODO: FOR API HANDOFF
   const SignedIn = true;
 
   return <NoSsr defer>{SignedIn ? <Outlet /> : <SignIn />}</NoSsr>;

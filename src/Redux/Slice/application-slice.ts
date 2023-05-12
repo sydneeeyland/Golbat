@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const application = createSlice({
   name: 'application',
   initialState: {
-    'jp-state': [],
+    'jp-prefecture': [],
     'jp-city': [],
     'jp-town': [],
     'ph-province': [],
