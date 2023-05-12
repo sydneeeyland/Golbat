@@ -21,5 +21,14 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 0,
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off',
+    'import/extensions': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    useUnknownInCatchVariables: 'off',
   },
 };
