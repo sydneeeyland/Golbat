@@ -83,3 +83,32 @@ export const moduleInitialState = {
     deliveryNotes: null,
   },
 };
+
+export const tableColumnConfig = {
+  packinglist: [
+    {
+      accessorKey: 'origin',
+      header: 'Origin',
+    },
+    {
+      accessorKey: 'company',
+      header: 'Company',
+    },
+    {
+      accessorKey: 'agent',
+      header: 'Agent',
+    },
+    {
+      accessorKey: 'boxNumber',
+      header: 'Box #',
+    },
+    {
+      accessorKey: 'size',
+      header: 'Size',
+    },
+    {
+      accessorKey: 'equivalent',
+      header: 'Equivalent',
+    },
+  ],
+};

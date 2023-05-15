@@ -1,12 +1,15 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { NoSsr, Stack } from '@mui/material';
+import { NoSsr, Stack, Box } from '@mui/material';
 import BreadCrumb from '../../Components/BreadCrumb';
 import FormContainer from '../../Components/Container/FormContainer';
 
 import ErrorFallback from '../../Middleware/ErrorFallback';
 import ModalButton from '../../Components/Buttons/ModalButton';
 import SyncButton from '../../Components/Buttons/SyncButton';
+import FormTable from '../../Components/Table/FormTable';
+
+import { reduxModule } from '../../Constant/Application/Common';
 
 function Packinglist() {
   return (
@@ -38,6 +41,11 @@ function Packinglist() {
           </Stack>
         </ErrorBoundary>
       </FormContainer>
+      <Box sx={{ mt: 3 }}>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <FormTable module={reduxModule.PACKINGLIST} />
+        </ErrorBoundary>
+      </Box>
     </NoSsr>
   );
 }

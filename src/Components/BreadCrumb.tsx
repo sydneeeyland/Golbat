@@ -1,13 +1,14 @@
 import { useEffect, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Box } from '@mui/material';
+import { Box, NoSsr } from '@mui/material';
 
 import { emphasize, styled } from '@mui/material/styles';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Chip from '@mui/material/Chip';
 
 import HomeIcon from '@mui/icons-material/Home';
+import BreadCrumbLoading from './Loading/Skeleton/BreadCrumbLoading';
 
 type Props = {
   page: string;
@@ -41,16 +42,18 @@ function Breadcrumb({ page }: Props) {
   }, [page]);
 
   return (
-    <Box sx={{ marginBottom: '20px' }}>
-      <Breadcrumbs aria-label="breadcrumb">
-        <StyledBreadcrumb
-          label="Home"
-          icon={<HomeIcon fontSize="small" />}
-          onClick={() => navigate('/')}
-        />
-        <StyledBreadcrumb label={page} />
-      </Breadcrumbs>
-    </Box>
+    <NoSsr defer fallback={<BreadCrumbLoading />}>
+      <Box sx={{ marginBottom: '20px' }}>
+        <Breadcrumbs aria-label="breadcrumb">
+          <StyledBreadcrumb
+            label="Home"
+            icon={<HomeIcon fontSize="small" />}
+            onClick={() => navigate('/')}
+          />
+          <StyledBreadcrumb label={page} />
+        </Breadcrumbs>
+      </Box>
+    </NoSsr>
   );
 }
 
