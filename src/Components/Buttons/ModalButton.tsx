@@ -5,7 +5,7 @@ import { AddCircle } from '@mui/icons-material';
 import { Button, NoSsr } from '@mui/material';
 
 import { FormModalByModuleType } from '../../Constant/Application/FormModals';
-import LoadingComponent from '../Loading/LoadingComponent';
+import ActionButtonLoading from '../Loading/Skeleton/ActionButtonLoading';
 
 type Props = {
   module: string;
@@ -34,7 +34,7 @@ function ActionTab({ module, content, maxWidth }: Props) {
   };
 
   return (
-    <NoSsr defer fallback={<LoadingComponent />}>
+    <NoSsr defer fallback={<ActionButtonLoading />}>
       <Button
         variant="csi-primary"
         startIcon={<AddCircle />}

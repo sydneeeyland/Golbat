@@ -9,6 +9,7 @@ import Sidebar from '../Modules/Layout/Sidebar';
 import User from '../Modules/Layout/User';
 import Notification from '../Modules/Layout/Notification';
 import Announcement from '../Modules/Layout/Announcement';
+import LoadingComponent from '../Components/Loading/LoadingComponent';
 
 function Main() {
   const Style = useSidebarStyle();
@@ -20,7 +21,7 @@ function Main() {
   };
 
   return (
-    <NoSsr defer>
+    <>
       <Box id="header" className={Style.header}>
         <CompanyHeading title={CompanyName} />
         <Box
@@ -46,9 +47,11 @@ function Main() {
         <Sidebar />
       </Box>
       <Box id="main" className={Style.main}>
-        <Outlet />
+        <NoSsr defer fallback={<LoadingComponent />}>
+          <Outlet />
+        </NoSsr>
       </Box>
-    </NoSsr>
+    </>
   );
 }
 
