@@ -10,6 +10,7 @@ const Maintenance = lazy(() =>
 );
 
 function ApplicationStatus() {
+  // TODO: FOR API HANDOFF
   const MaintenanceMode = false;
 
   return <NoSsr defer>{MaintenanceMode ? <Maintenance /> : <Outlet />}</NoSsr>;

@@ -10,7 +10,8 @@ type Props = {
 };
 
 function ValidatePermission({ route, children }: Props) {
-  const permission = ['Dashboard'];
+  // TODO: FOR API HANDOFF
+  const permission = ['Dashboard', 'Packinglist'];
   return (
     <NoSsr defer>
       {permission.includes(route) ? children : <Unauthorized />}

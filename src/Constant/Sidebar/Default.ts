@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const Default = [
   {
     name: 'Dashboard',
