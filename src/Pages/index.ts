@@ -12,3 +12,4 @@ export const SignIn = lazy(() => import('./Authentication/SignIn'));
 // Authenticated
 export const Dashboard = lazy(() => import('./Authenticated/Dashboard'));
 export const Packinglist = lazy(() => import('./Authenticated/Packinglist'));
+export const Emptybox = lazy(() => import('./Authenticated/Emptybox'));
