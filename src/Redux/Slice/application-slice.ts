@@ -10,6 +10,7 @@ export const application = createSlice({
     'ph-province': [],
     'ph-city': [],
     packinglist: PackinglistData,
+    emptybox: [],
   },
   reducers: {
     testFunction: () => {},

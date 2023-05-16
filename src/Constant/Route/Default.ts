@@ -1,4 +1,4 @@
-import { Dashboard, Packinglist } from '../../Pages';
+import { Dashboard, Packinglist, Emptybox } from '../../Pages';
 
 export const PrivateRoute = [
   {
@@ -10,5 +10,10 @@ export const PrivateRoute = [
     key: 'Packinglist',
     element: Packinglist,
     path: '/entry/packinglist',
+  },
+  {
+    key: 'Emptybox',
+    element: Emptybox,
+    path: '/entry/emptybox',
   },
 ];

@@ -37,6 +37,7 @@ function FormTable({ module }: FormTableProps) {
       enableStickyHeader
       state={{ isLoading: loading }}
       initialState={{ density: 'compact', showColumnFilters: true }}
+      muiTableProps={{ sx: { tableLayout: 'fixed' } }}
       muiTopToolbarProps={{ sx: { borderRadius: 6 } }}
       muiBottomToolbarProps={{
         sx: { borderRadius: 6 },
