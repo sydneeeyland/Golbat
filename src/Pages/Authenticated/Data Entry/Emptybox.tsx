@@ -1,21 +1,21 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { NoSsr, Stack, Box } from '@mui/material';
-import BreadCrumb from '../../Components/BreadCrumb';
-import FormContainer from '../../Components/Container/FormContainer';
+import BreadCrumb from '../../../Components/BreadCrumb';
+import FormContainer from '../../../Components/Container/FormContainer';
 
-import ErrorFallback from '../../Middleware/ErrorFallback';
-import ModalButton from '../../Components/Buttons/ModalButton';
-import SyncButton from '../../Components/Buttons/SyncButton';
-import FormTable from '../../Components/Table/FormTable';
+import ErrorFallback from '../../../Middleware/ErrorFallback';
+import ModalButton from '../../../Components/Buttons/ModalButton';
+import SyncButton from '../../../Components/Buttons/SyncButton';
+import FormTable from '../../../Components/Table/FormTable';
 
-import { reduxModule } from '../../Constant/Application/Common';
+import { Module } from '../../../Constant/Application/Common';
 
-function Packinglist() {
+function Emptybox() {
   return (
     <NoSsr defer>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <BreadCrumb page="Dashboard" />
+        <BreadCrumb page="Emptybox" />
       </ErrorBoundary>
       <FormContainer>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
@@ -32,7 +32,7 @@ function Packinglist() {
               </ErrorBoundary>
               <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <ModalButton
-                  module="packinglist"
+                  module={Module.EMPTYBOX}
                   content="Add Record"
                   maxWidth="lg"
                 />
@@ -43,11 +43,11 @@ function Packinglist() {
       </FormContainer>
       <Box sx={{ mt: 3 }}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <FormTable module={reduxModule.PACKINGLIST} />
+          <FormTable module={Module.EMPTYBOX} />
         </ErrorBoundary>
       </Box>
     </NoSsr>
   );
 }
 
-export default Packinglist;
+export default Emptybox;

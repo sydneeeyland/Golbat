@@ -11,7 +11,13 @@ type Props = {
 
 function ValidatePermission({ route, children }: Props) {
   // TODO: FOR API HANDOFF
-  const permission = ['Dashboard', 'Packinglist', 'Emptybox'];
+  const permission = [
+    'Dashboard',
+    'Packinglist',
+    'Emptybox',
+    'Dispatch & Delivery',
+    'Fleet',
+  ];
   return (
     <NoSsr defer>
       {permission.includes(route) ? children : <Unauthorized />}

@@ -11,6 +11,10 @@ export const application = createSlice({
     'ph-city': [],
     packinglist: PackinglistData,
     emptybox: [],
+    dispatch: [],
+    fleet: [],
+    roaming: [],
+    telemarketing: [],
   },
   reducers: {
     testFunction: () => {},

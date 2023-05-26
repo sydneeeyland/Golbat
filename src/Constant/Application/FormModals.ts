@@ -6,10 +6,16 @@ export const PackinglistForm = lazy(
 export const EmptyBoxForm = lazy(
   () => import('../../Components/Modal/EmptyboxForm')
 );
+export const DispatchAndDeliveryForm = lazy(
+  () => import('../../Components/Modal/DispatchAndDeliveryForm')
+);
+export const FleetForm = lazy(() => import('../../Components/Modal/FleetForm'));
 
 export const FormModalByModuleType = {
   packinglist: PackinglistForm,
   emptybox: EmptyBoxForm,
+  dispatch: DispatchAndDeliveryForm,
+  fleet: FleetForm,
 };
 
 export const config = [];

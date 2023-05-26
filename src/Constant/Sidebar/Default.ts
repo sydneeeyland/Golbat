@@ -33,4 +33,34 @@ export const Default = [
       },
     ],
   },
+  {
+    name: 'Warehouse',
+    alias: 'warehouse',
+    icon: 'bi bi-truck',
+    withChildren: true,
+    target: 'warehouse-nav',
+    children: [
+      {
+        name: 'Dispatch & Delivery',
+        url: '/warehouse/dispatch',
+      },
+      {
+        name: 'Fleet',
+        url: '/warehouse/fleet',
+      },
+      {
+        name: 'Roaming',
+        url: '/warehouse/roaming',
+      },
+    ],
+  },
+  {
+    name: 'Telemarketing',
+    icon: 'bi bi-telephone-outbound',
+    withChildren: false,
+    url: '/telemarketing',
+    isHidden: false,
+    target: 'null',
+    children: [],
+  },
 ];
