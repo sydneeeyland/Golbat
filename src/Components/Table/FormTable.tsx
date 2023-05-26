@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useMemo, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import MaterialReactTable, { MRT_ColumnDef } from 'material-react-table';
+import MaterialReactTable, {
+  MRT_ColumnDef,
+  // MRT_ColumnFiltersState,
+} from 'material-react-table';
 
 import { tableColumnConfig } from '../../Constant/Application/Common';
 
@@ -13,6 +16,9 @@ function FormTable({ module }: FormTableProps) {
   // TODO ADD API CALL MUTATION THEN FETCH DATA VIA STORE
   const data = useSelector((store: any) => store?.application[module]);
   const [loading, setLoading] = useState(true);
+  // const [columnFilters, setColumnFilters] = useState<MRT_ColumnFiltersState>(
+  //   []
+  // );
 
   const columns = useMemo<MRT_ColumnDef<any>[]>(
     () => tableColumnConfig[module as keyof typeof tableColumnConfig],
@@ -35,6 +41,7 @@ function FormTable({ module }: FormTableProps) {
       enableGlobalFilter={false}
       enableRowSelection
       enableStickyHeader
+      // onColumnFiltersChange={setColumnFilters}
       state={{ isLoading: loading }}
       initialState={{ density: 'compact', showColumnFilters: true }}
       muiTableProps={{ sx: { tableLayout: 'fixed' } }}

@@ -35,20 +35,23 @@ export const TextInputTypes = {
   CONTACT_PH: 'contact_ph',
 };
 
-export const RegexByInputType = {
+export const RegexExpression = {
   default: '([A-Z])',
   boxno: '^([0-9]{3}[A-Z]{2}[0-9]{3})',
-  contact_ph: '',
+  contact_ph: `^(09)\\d{9}$`,
 };
 
 export const InvalidFeedback = {
-  boxno: 'example: 123AB123',
+  boxno: 'Incorrect Format, Example: 123AB123',
+  contact_ph: 'Incorrect Format, Example: 09396341125',
 };
 
-export const reduxModule = {
+export const Module = {
   PACKINGLIST: 'packinglist',
   EMPTYBOX: 'emptybox',
   PICKUPS: '',
+  DISPATCH: 'dispatch',
+  FLEET: 'fleet',
 };
 
 export const moduleInitialState = {
@@ -132,4 +135,56 @@ export const tableColumnConfig = {
     },
   ],
   emptybox: [],
+  dispatch: [
+    {
+      accessorKey: 'dispatchId',
+      header: 'Dispatch #',
+    },
+    {
+      accessorKey: 'isWhseToPier',
+      header: 'Warehouse > Pier',
+    },
+    {
+      accessorKey: 'boxCount',
+      header: 'Boxes Carried',
+    },
+    {
+      accessorFn: (row: any) => `${row.startDate} | ${row.endDate}`,
+      header: 'Delivery',
+    },
+    {
+      accessorKey: 'fleet',
+      header: 'Fleet #',
+    },
+    {
+      accessorKey: 'truckingCompany',
+      header: 'Trucking Company',
+    },
+    {
+      accessorKey: 'status',
+      header: 'Status',
+    },
+  ],
+  fleet: [
+    {
+      accessorKey: 'truckingCompany',
+      header: 'Company',
+    },
+    {
+      accessorKey: 'plateNumber',
+      header: 'Plate #',
+    },
+    {
+      accessorFn: (row: any) => `${row.driver} | ${row.driverContactNumber}`,
+      header: 'Driver',
+    },
+    {
+      accessorFn: (row: any) => `${row.helper} | ${row.helperContactNumber}`,
+      header: 'Helper',
+    },
+    {
+      accessorKey: 'status',
+      header: 'Status',
+    },
+  ],
 };

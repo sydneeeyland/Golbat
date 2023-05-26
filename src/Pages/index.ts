@@ -11,5 +11,20 @@ export const SignIn = lazy(() => import('./Authentication/SignIn'));
 
 // Authenticated
 export const Dashboard = lazy(() => import('./Authenticated/Dashboard'));
-export const Packinglist = lazy(() => import('./Authenticated/Packinglist'));
-export const Emptybox = lazy(() => import('./Authenticated/Emptybox'));
+
+// Data Entry
+export const Packinglist = lazy(
+  () => import('./Authenticated/Data Entry/Packinglist')
+);
+export const Emptybox = lazy(
+  () => import('./Authenticated/Data Entry/Emptybox')
+);
+
+// Delivery
+export const DispatchAndDelivery = lazy(
+  () => import('./Authenticated/Delivery/DispatchAndDelivery')
+);
+export const Fleet = lazy(() => import('./Authenticated/Delivery/Fleet'));
+export const Roaming = lazy(() => import('./Authenticated/Delivery/Roaming'));
+
+// Telemarketing

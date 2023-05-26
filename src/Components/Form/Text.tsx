@@ -1,25 +1,30 @@
-import { useDispatch } from 'react-redux';
-
 import { TextField } from '@mui/material';
 import {
   TextInputTypes,
-  RegexByInputType,
+  RegexExpression,
   InvalidFeedback,
 } from '../../Constant/Application/Common';
 
-import { handleInputChange } from '../../Redux/Slice/transaction-slice';
+import useInputValidation from '../../Hooks/useInputValidation';
 
 type Props = {
   id: string;
   label: string;
   autoFocus?: boolean;
   required?: boolean;
-  inputType?: string;
+  validationType?: string;
   module: string;
 };
 
-function Text({ id, label, autoFocus, required, inputType, module }: Props) {
-  const dispatch = useDispatch();
+function Text({
+  id,
+  label,
+  autoFocus,
+  required,
+  validationType,
+  module,
+}: Props) {
+  const { ValidateInput, error } = useInputValidation();
 
   return (
     <TextField
@@ -30,13 +35,21 @@ function Text({ id, label, autoFocus, required, inputType, module }: Props) {
       fullWidth
       sx={{ pb: 1 }}
       inputProps={{
-        pattern: RegexByInputType[inputType as keyof typeof RegexByInputType],
-        title: InvalidFeedback[inputType as keyof typeof InvalidFeedback],
+        pattern:
+          RegexExpression[validationType as keyof typeof RegexExpression],
       }}
-      onBlur={(e) =>
-        e.target.value !== '' &&
-        dispatch(handleInputChange({ [id]: e.target.value, module }))
+      onInput={(e) => (e.target as HTMLInputElement).setCustomValidity('')}
+      onInvalid={(e) =>
+        (e.target as HTMLInputElement).setCustomValidity(
+          InvalidFeedback[validationType as keyof typeof InvalidFeedback] ||
+            'Cannot be empty'
+        )
       }
+      onBlur={(e) => {
+        const { value } = e.target;
+        ValidateInput({ id, value, validationType, module });
+      }}
+      error={error}
       autoFocus={autoFocus}
       required={required}
     />
@@ -46,8 +59,8 @@ function Text({ id, label, autoFocus, required, inputType, module }: Props) {
 Text.defaultProps = {
   autoFocus: false,
   required: false,
-  inputType:
-    RegexByInputType[TextInputTypes.DEFAULT as keyof typeof RegexByInputType],
+  validationType:
+    RegexExpression[TextInputTypes.DEFAULT as keyof typeof RegexExpression],
 };
 
 export default Text;

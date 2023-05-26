@@ -1,16 +1,15 @@
 export const PackinglistData = [
   {
-    origin: 'Republic of the Congo',
-    cargoType: 'Bahamas',
-    company: 'Wikivu',
-    agent: 'Ventura Corporation LTD',
-    boxNumber: 'Aliquam quis turpis eget elit sodales scelerisque.',
+    origin: 'Japan',
+    cargoType: 'Personal Effects',
+    company: 'Chenvel',
+    agent: 'Chenvel',
+    boxNumber: '123KN222',
     trackingNumber: 'Proin interdum mauris non ligula pellentesque ultrices.',
     forwarder:
       'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.',
-    size: 23,
-    equivalent:
-      'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.',
+    size: 0.125,
+    equivalent: 'UNDERSIZED',
     lengthWidthHeight: 78,
     cbm: 22,
     serialNumber: 45,

@@ -18,6 +18,8 @@ function ActionTab({ module, content, maxWidth }: Props) {
     packinglist: false,
     emptybox: false,
     pickup: false,
+    dispatch: false,
+    fleet: false,
   });
 
   const DisplayModal =
