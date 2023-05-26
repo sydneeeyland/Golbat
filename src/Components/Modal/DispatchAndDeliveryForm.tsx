@@ -59,10 +59,10 @@ function DispatchAndDeliveryForm({ open, close }: Props) {
           <Grid item xl lg md xs={12}>
             <Grid container spacing={2}>
               <Grid item xl lg md xs={12}>
-                <CustomDatePicker id="startDate" label="Start Date" />
+                <CustomDatePicker label="Start Date" />
               </Grid>
               <Grid item xl lg md xs={12}>
-                <CustomDatePicker id="endDate" label="End Date" />
+                <CustomDatePicker label="End Date" />
               </Grid>
             </Grid>
             <Tag id="areas" label="Areas" />
