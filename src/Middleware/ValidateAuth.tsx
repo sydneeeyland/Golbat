@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 
 import { NoSsr } from '@mui/material';
 
+import useValidateAuth from '../Hooks/useValidateAuth';
+
 const SignIn = lazy(() =>
   import('../Pages/Authentication/SignIn').then((module) => {
     return { default: module.default };
@@ -10,10 +12,9 @@ const SignIn = lazy(() =>
 );
 
 function ValidateAuth() {
-  // TODO: FOR API HANDOFF
-  const SignedIn = true;
+  const { signedIn } = useValidateAuth();
 
-  return <NoSsr defer>{SignedIn ? <Outlet /> : <SignIn />}</NoSsr>;
+  return <NoSsr defer>{signedIn ? <Outlet /> : <SignIn />}</NoSsr>;
 }
 
 export default ValidateAuth;
