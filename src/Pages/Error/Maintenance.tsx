@@ -1,27 +1,44 @@
-import { Box, Typography, NoSsr } from '@mui/material';
+import { useEffect } from 'react';
 
-import { useMaintenanceStyles } from '../../Assets/Styles/MaintenanceStyles';
+import { Grid, NoSsr, Box, Typography } from '@mui/material';
+
+import MaintenanceHero from '../../Assets/Images/maintenance.svg';
 
 function Maintenance() {
-  const Style = useMaintenanceStyles();
+  useEffect(() => {
+    document.title = 'Maintenance';
+  }, []);
 
   return (
     <NoSsr defer>
-      <Box className={Style.wrapper}>
-        <Box component="h1">MAINTENANCE MODE</Box>
-        <Box className={Style.descriptionBox}>
-          <Box className={Style.descriptionContent} component="h3">
-            Sorry for the inconvenience.
+      <Grid
+        container
+        spacing={4}
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+        direction="column"
+      >
+        <Grid item xs={12}>
+          <Box minWidth="480px">
+            <img
+              src={MaintenanceHero}
+              alt="maintenance"
+              width="100%"
+              height="auto"
+            />
           </Box>
-          <Box className={Style.descriptionContent} component="h3">
-            Our website is currently undergoing scheduled
-          </Box>
-          <Box className={Style.descriptionContent} component="h3">
-            maintenance
-          </Box>
-        </Box>
-        <Typography>Thank you for your understanding.</Typography>
-      </Box>
+        </Grid>
+        <Grid item xs={12} textAlign="center">
+          <Box component="h1">Maintenance</Box>
+          <Typography>
+            We are currently performing a maintenance and we are doing our best
+          </Typography>
+          <Typography>
+            to return our service. We apologized for the inconvenience.
+          </Typography>
+        </Grid>
+      </Grid>
     </NoSsr>
   );
 }
