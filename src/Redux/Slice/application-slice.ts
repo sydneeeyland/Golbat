@@ -23,6 +23,10 @@ export const application = createSlice({
       ...state,
       packinglist: payload,
     }),
+    handleAsyncFetch: (state, { payload }) => ({
+      ...state,
+      loading: payload,
+    }),
     handleError: (state, { payload }) => ({
       ...state.error,
       ...payload,
@@ -30,7 +34,8 @@ export const application = createSlice({
   },
 });
 
-export const { updatePackinglist, handleError } = application.actions;
+export const { updatePackinglist, handleAsyncFetch, handleError } =
+  application.actions;
 export default application.reducer;
 
 /* ----------------------------------- API Mutation ---------------------------------- */
@@ -38,11 +43,13 @@ export default application.reducer;
 export const applicationApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     CacheInitialData: builder.query<unknown, void>({
-      query: () => 'products',
+      query: () => 'packinglist.json?key=9410efa0',
       async onQueryStarted(_, { queryFulfilled, dispatch }) {
         try {
+          dispatch(handleAsyncFetch(true));
           const { data } = await queryFulfilled;
           dispatch(updatePackinglist(data));
+          dispatch(handleAsyncFetch(false));
         } catch (err) {
           dispatch(handleError(err));
         }
