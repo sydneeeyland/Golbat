@@ -10,14 +10,14 @@ type Props = {
 };
 
 function ErrorFallback({ error }: Props) {
-  const errorTrace = [error];
-  const component = errorTrace[0].stack.split(' ')[9];
+  const errorTrace = [error] || 'Unknown Trace';
+  const component = errorTrace[0]?.stack.split(' ')[9] || 'Unknown Component';
 
   return (
     <Box>
       <Alert severity="error">
         Something went wrong —{' '}
-        <code>{`${error.message}, trace component: <${component} /> - view console for full log`}</code>
+        <code>{`${error.message}, trace component: <${component} />`}</code>
       </Alert>
     </Box>
   );

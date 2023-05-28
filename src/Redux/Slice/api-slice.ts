@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const apiSlice = createApi({
-  reducerPath: 'api',
+  reducerPath: 'baseApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://my.api.mockaroo.com/',
+    baseUrl: 'https://dummyjson.com',
   }),
   tagTypes: ['Quotes'],
   endpoints: () => ({}),

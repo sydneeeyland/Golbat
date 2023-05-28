@@ -39,6 +39,9 @@ function FormTable({ module }: FormTableProps) {
       enableFullScreenToggle={false}
       enableHiding={false}
       enableGlobalFilter={false}
+      enableGrouping
+      enableColumnVirtualization
+      enableRowVirtualization
       enableRowSelection
       enableStickyHeader
       // onColumnFiltersChange={setColumnFilters}
