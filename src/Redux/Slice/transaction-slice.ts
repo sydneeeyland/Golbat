@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { moduleInitialState } from '../../Constant/Application/Common';
-
-const { packinglist } = moduleInitialState;
 
 export const transaction = createSlice({
   name: 'transaction',
   initialState: {
-    packinglist,
+    packinglit: [],
     emptybox: [],
     pickups: [],
     invoice: [],
