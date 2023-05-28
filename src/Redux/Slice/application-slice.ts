@@ -16,18 +16,21 @@ export const application = createSlice({
     roaming: [],
     telemarketing: [],
     loading: false,
+    error: [],
   },
   reducers: {
-    updatePackinglist: (state, { payload }) => {
-      state.packinglist = {
-        ...state.packinglist,
-        ...payload,
-      };
-    },
+    updatePackinglist: (state, { payload }) => ({
+      ...state,
+      packinglist: payload,
+    }),
+    handleError: (state, { payload }) => ({
+      ...state.error,
+      ...payload,
+    }),
   },
 });
 
-export const { updatePackinglist } = application.actions;
+export const { updatePackinglist, handleError } = application.actions;
 export default application.reducer;
 
 /* ----------------------------------- API Mutation ---------------------------------- */
@@ -37,9 +40,12 @@ export const applicationApi = apiSlice.injectEndpoints({
     CacheInitialData: builder.query<unknown, void>({
       query: () => 'products',
       async onQueryStarted(_, { queryFulfilled, dispatch }) {
-        const data = await queryFulfilled;
-
-        dispatch(updatePackinglist(data.data));
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(updatePackinglist(data));
+        } catch (err) {
+          dispatch(handleError(err));
+        }
       },
     }),
   }),
