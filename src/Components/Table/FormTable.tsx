@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import MaterialReactTable, {
   MRT_ColumnDef,
@@ -13,23 +13,13 @@ type FormTableProps = {
 };
 
 function FormTable({ module }: FormTableProps) {
-  // TODO ADD API CALL MUTATION THEN FETCH DATA VIA STORE
   const data = useSelector((store: any) => store?.application[module]);
-  const [loading, setLoading] = useState(true);
-  // const [columnFilters, setColumnFilters] = useState<MRT_ColumnFiltersState>(
-  //   []
-  // );
+  const { loading } = useSelector((store: any) => store.application);
 
   const columns = useMemo<MRT_ColumnDef<any>[]>(
     () => tableColumnConfig[module as keyof typeof tableColumnConfig],
     [module]
   );
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
 
   return (
     <MaterialReactTable
