@@ -13,7 +13,6 @@ import LoadingComponent from '../Components/Loading/LoadingComponent';
 
 function Main() {
   const Style = useSidebarStyle();
-  const CompanyName = 'Chenvel Services Inc';
 
   const HandleSidebarToggle = () => {
     const body = document.querySelectorAll('body');
@@ -23,7 +22,7 @@ function Main() {
   return (
     <>
       <Box id="header" className={Style.header}>
-        <CompanyHeading title={CompanyName} />
+        <CompanyHeading title={import.meta.env.VITE_APPLICATION_NAME} />
         <Box
           component="i"
           className="bi bi-list toggle-sidebar-btn"
