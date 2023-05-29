@@ -14,3 +14,19 @@
 
 # ⚠️Running the Application
 ### - ```npm run dev```
+
+
+### ENV 
+```
+## Application
+VITE_APPLICATION_NAME='Chenvel Services Inc'
+
+## Development - API
+VITE_BASE_API_URI=https://my.api.mockaroo.com/
+
+## Staging - API
+# VITE_BASE_API_URI=https://my.api.mockaroo.com/
+
+## Production - API
+# VITE_BASE_API_URI=https://my.api.mockaroo.com/
+```
