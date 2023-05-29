@@ -10,7 +10,7 @@ import {
 import AutoComplete from '../Form/AutoComplete';
 import Text from '../Form/Text';
 
-import { Module } from '../../Constant/Application/Common';
+import { Module } from '../../Constant/Application/Module';
 
 type Props = {
   open: boolean;

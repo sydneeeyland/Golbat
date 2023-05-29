@@ -9,7 +9,7 @@ import ModalButton from '../../../Components/Buttons/ModalButton';
 import SyncButton from '../../../Components/Buttons/SyncButton';
 import FormTable from '../../../Components/Table/FormTable';
 
-import { Module } from '../../../Constant/Application/Common';
+import { Module } from '../../../Constant/Application/Module';
 
 function Emptybox() {
   return (

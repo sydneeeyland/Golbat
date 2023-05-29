@@ -18,9 +18,9 @@ import {
   CargoType,
   Company,
   cargoSize,
-  TextInputTypes,
-  Module,
 } from '../../Constant/Application/Common';
+import { TextInputTypes } from '../../Constant/Application/Validation';
+import { Module } from '../../Constant/Application/Module';
 import Heading from '../Form/Heading';
 
 type Props = {

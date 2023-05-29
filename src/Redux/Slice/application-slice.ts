@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { apiSlice } from './api-slice';
 
+import { MethodTypes } from '../../Constant/Application/Http';
+
 export const application = createSlice({
   name: 'application',
   initialState: {
@@ -43,7 +45,13 @@ export default application.reducer;
 export const applicationApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     CacheInitialData: builder.query<unknown, void>({
-      query: () => 'packinglist.json?key=9410efa0',
+      query: () => ({
+        url: 'packinglist.json',
+        method: MethodTypes.GET,
+        headers: {
+          'X-API-Key': '9410efa0',
+        },
+      }),
       async onQueryStarted(_, { queryFulfilled, dispatch }) {
         try {
           dispatch(handleAsyncFetch(true));
