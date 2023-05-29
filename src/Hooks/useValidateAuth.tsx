@@ -5,7 +5,7 @@ const Cache = () => {
 };
 
 export default function useValidateAuth() {
-  const signedIn = true;
+  const signedIn = false;
 
   if (signedIn) {
     Cache();
