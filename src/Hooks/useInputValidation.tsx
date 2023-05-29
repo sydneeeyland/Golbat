@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { RegexExpression } from '../Constant/Application/Common';
+import { RegexExpression } from '../Constant/Application/Validation';
 import { handleInputChange } from '../Redux/Slice/transaction-slice';
 
 type Props = {

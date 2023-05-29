@@ -6,7 +6,7 @@ import MaterialReactTable, {
   // MRT_ColumnFiltersState,
 } from 'material-react-table';
 
-import { tableColumnConfig } from '../../Constant/Application/Common';
+import { tableColumnConfig } from '../../Constant/Application/Table';
 
 type FormTableProps = {
   module: string;

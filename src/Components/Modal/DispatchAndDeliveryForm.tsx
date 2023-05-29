@@ -12,7 +12,7 @@ import Text from '../Form/Text';
 import Tag from '../Form/Tag';
 import CustomDatePicker from '../Form/CustomDatePicker';
 
-import { Module } from '../../Constant/Application/Common';
+import { Module } from '../../Constant/Application/Module';
 import TextArea from '../Form/TextArea';
 import Toggle from '../Form/Toggle';
 
