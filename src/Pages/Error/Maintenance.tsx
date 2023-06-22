@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { Grid, NoSsr, Box, Typography } from '@mui/material';
 
-import MaintenanceHero from '../../Assets/Images/Maintenance.svg';
+import MaintenanceHero from '../../Assets/Images/maintenance.svg';
 
 function Maintenance() {
   useEffect(() => {
