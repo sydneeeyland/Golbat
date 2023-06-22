@@ -23,6 +23,11 @@ const theme = createTheme({
             '&:hover': {
               backgroundColor: '#008BD9',
             },
+            '&:disabled': {
+              color: 'black',
+              backgroundColor: 'white',
+              border: '1px solid whitesmoke',
+            },
           },
         },
         {

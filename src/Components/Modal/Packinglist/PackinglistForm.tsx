@@ -8,20 +8,20 @@ import {
   NoSsr,
   Grid,
 } from '@mui/material';
-import AutoComplete from '../Form/AutoComplete';
-import Text from '../Form/Text';
-import TextArea from '../Form/TextArea';
-import LoadingComponent from '../Loading/LoadingComponent';
+import AutoComplete from '../../Form/AutoComplete';
+import Text from '../../Form/Text';
+import TextArea from '../../Form/TextArea';
+import LoadingComponent from '../../Loading/LoadingComponent';
 
 import {
   Countries,
   CargoType,
   Company,
   cargoSize,
-} from '../../Constant/Application/Common';
-import { TextInputTypes } from '../../Constant/Application/Validation';
-import { Module } from '../../Constant/Application/Module';
-import Heading from '../Form/Heading';
+} from '../../../Constant/Application/Common';
+import { TextInputTypes } from '../../../Constant/Application/Validation';
+import { Module } from '../../../Constant/Application/Module';
+import Heading from '../../Form/Heading';
 
 type Props = {
   open: boolean;

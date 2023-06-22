@@ -8,6 +8,7 @@ export const useActionContainerStyles = makeStyles({
     border: '1px solid #e2e2e2',
     borderRadius: 12,
     overflow: 'auto',
+    marginBottom: 15
   },
 });
 

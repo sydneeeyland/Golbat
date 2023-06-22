@@ -7,14 +7,14 @@ import {
   Grid,
 } from '@mui/material';
 
-import AutoComplete from '../Form/AutoComplete';
-import Text from '../Form/Text';
-import Tag from '../Form/Tag';
-import CustomDatePicker from '../Form/CustomDatePicker';
+import AutoComplete from '../../Form/AutoComplete';
+import Text from '../../Form/Text';
+import Tag from '../../Form/Tag';
+import CustomDatePicker from '../../Form/CustomDatePicker';
 
-import { Module } from '../../Constant/Application/Module';
-import TextArea from '../Form/TextArea';
-import Toggle from '../Form/Toggle';
+import { Module } from '../../../Constant/Application/Module';
+import TextArea from '../../Form/TextArea';
+import Toggle from '../../Form/Toggle';
 
 type Props = {
   open: boolean;
@@ -59,10 +59,10 @@ function DispatchAndDeliveryForm({ open, close }: Props) {
           <Grid item xl lg md xs={12}>
             <Grid container spacing={2}>
               <Grid item xl lg md xs={12}>
-                <CustomDatePicker label="Start Date" />
+                <CustomDatePicker label="Start Date" disablePast />
               </Grid>
               <Grid item xl lg md xs={12}>
-                <CustomDatePicker label="End Date" />
+                <CustomDatePicker label="End Date" disablePast />
               </Grid>
             </Grid>
             <Tag id="areas" label="Areas" />
