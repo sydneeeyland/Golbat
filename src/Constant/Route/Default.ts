@@ -5,7 +5,7 @@ import {
   DispatchAndDelivery,
   Fleet,
   Roaming,
-  Telemarketing
+  Telemarketing,
 } from '../../Pages';
 
 export const PrivateRoute = [
