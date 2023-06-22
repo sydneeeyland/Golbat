@@ -9,8 +9,8 @@ function useWebSocket() {
     '2': false,
   });
 
-  const sendMessage = (id: Number) => {
-    socket.emit('toggle_calling', { id: id, value: true });
+  const sendMessage = (id: number) => {
+    socket.emit('toggle_calling', { id, value: true });
   };
 
   useEffect(() => {
@@ -20,8 +20,8 @@ function useWebSocket() {
         [data.id]: data.value,
       }));
     });
-  }, [socket]);
-  console.log(list);
+  }, []);
+
   return { list, sendMessage };
 }
 
