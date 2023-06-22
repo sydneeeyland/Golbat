@@ -7,10 +7,10 @@ import {
   Grid,
 } from '@mui/material';
 
-import AutoComplete from '../Form/AutoComplete';
-import Text from '../Form/Text';
+import AutoComplete from '../../Form/AutoComplete';
+import Text from '../../Form/Text';
 
-import { Module } from '../../Constant/Application/Module';
+import { Module } from '../../../Constant/Application/Module';
 
 type Props = {
   open: boolean;

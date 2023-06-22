@@ -1,4 +1,4 @@
-import { useEffect, memo } from 'react';
+import { useLayoutEffect, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Box, NoSsr } from '@mui/material';
@@ -37,7 +37,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 function Breadcrumb({ page }: Props) {
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.title = page;
   }, [page]);
 

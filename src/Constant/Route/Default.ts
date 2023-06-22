@@ -5,6 +5,7 @@ import {
   DispatchAndDelivery,
   Fleet,
   Roaming,
+  Telemarketing
 } from '../../Pages';
 
 export const PrivateRoute = [
@@ -37,5 +38,10 @@ export const PrivateRoute = [
     key: 'Roaming',
     element: Roaming,
     path: '/warehouse/roaming',
+  },
+  {
+    key: 'Telemarketing',
+    element: Telemarketing,
+    path: '/telemarketing',
   },
 ];

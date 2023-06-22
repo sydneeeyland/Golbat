@@ -28,3 +28,6 @@ export const Fleet = lazy(() => import('./Authenticated/Delivery/Fleet'));
 export const Roaming = lazy(() => import('./Authenticated/Delivery/Roaming'));
 
 // Telemarketing
+export const Telemarketing = lazy(
+  () => import('./Authenticated/Telemarketing')
+);

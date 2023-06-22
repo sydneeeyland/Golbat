@@ -1,15 +1,15 @@
 import { lazy } from 'react';
 
 export const PackinglistForm = lazy(
-  () => import('../../Components/Modal/PackinglistForm')
+  () => import('../../Components/Modal/Packinglist/PackinglistForm')
 );
 export const EmptyBoxForm = lazy(
-  () => import('../../Components/Modal/EmptyboxForm')
+  () => import('../../Components/Modal/Emptybox/EmptyboxForm')
 );
 export const DispatchAndDeliveryForm = lazy(
-  () => import('../../Components/Modal/DispatchAndDeliveryForm')
+  () => import('../../Components/Modal/DispatchAndDelivery/DispatchAndDeliveryForm')
 );
-export const FleetForm = lazy(() => import('../../Components/Modal/FleetForm'));
+export const FleetForm = lazy(() => import('../../Components/Modal/Fleet/FleetForm'));
 
 export const FormModalByModuleType = {
   packinglist: PackinglistForm,

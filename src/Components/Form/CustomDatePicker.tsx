@@ -4,9 +4,10 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 type Props = {
   label: string;
+  disablePast: boolean;
 };
 
-function CustomDatePicker({ label }: Props) {
+function CustomDatePicker({ label, disablePast }: Props) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
@@ -15,7 +16,7 @@ function CustomDatePicker({ label }: Props) {
         sx={{
           width: '100%',
         }}
-        disablePast
+        disablePast={disablePast}
       />
     </LocalizationProvider>
   );
