@@ -1,21 +1,21 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { NoSsr, Stack, Box } from '@mui/material';
-import BreadCrumb from '../../../Components/BreadCrumb';
-import FormContainer from '../../../Components/Container/FormContainer';
+import { Archive } from '@mui/icons-material';
+import BreadCrumb from '../../Components/BreadCrumb';
+import FormContainer from '../../Components/Container/FormContainer';
 
-import ErrorFallback from '../../../Middleware/ErrorFallback';
-import ModalButton from '../../../Components/Buttons/ModalButton';
-import SyncButton from '../../../Components/Buttons/SyncButton';
-import FormTable from '../../../Components/Table/FormTable';
+import ErrorFallback from '../../Middleware/ErrorFallback';
+import ModalButton from '../../Components/Buttons/ModalButton';
+import FormTable from '../../Components/Table/FormTable';
 
-import { Module } from '../../../Constant/Application/Module';
+import { Module } from '../../Constant/Application/Module';
 
-function Packinglist() {
+function Departure() {
   return (
     <NoSsr defer>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <BreadCrumb page="Packinglist" />
+        <BreadCrumb page="Departure" />
       </ErrorBoundary>
       <FormContainer>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
@@ -28,12 +28,18 @@ function Packinglist() {
               justifyContent="end"
             >
               <ErrorBoundary FallbackComponent={ErrorFallback}>
-                <SyncButton />
+                <ModalButton
+                  module={Module.DEPARTURE_BOX}
+                  variant="csi-secondary"
+                  icon={<Archive />}
+                  content="Import box to departure"
+                  maxWidth="lg"
+                />
               </ErrorBoundary>
               <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <ModalButton
-                  module={Module.PACKINGLIST}
-                  content="Create Packinglist"
+                  module={Module.DEPARTURE}
+                  content="Create Departure"
                   maxWidth="lg"
                 />
               </ErrorBoundary>
@@ -44,7 +50,7 @@ function Packinglist() {
       <Box sx={{ mt: 3 }}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <FormTable
-            module={Module.PACKINGLIST}
+            module={Module.DEPARTURE}
             rowActions
             rowSelection={false}
             rowFilters
@@ -55,4 +61,4 @@ function Packinglist() {
   );
 }
 
-export default Packinglist;
+export default Departure;

@@ -4,6 +4,8 @@ export const Module = {
   PICKUPS: '',
   DISPATCH: 'dispatch',
   FLEET: 'fleet',
+  DEPARTURE: 'departure',
+  DEPARTURE_BOX: 'departure_box'
 };
 
 export const moduleInitialState = {

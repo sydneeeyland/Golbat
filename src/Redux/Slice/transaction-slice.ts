@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const transaction = createSlice({
   name: 'transaction',
   initialState: {
-    packinglit: [],
+    packinglist: [],
     emptybox: [],
     pickups: [],
     invoice: [],

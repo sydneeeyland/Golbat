@@ -10,7 +10,7 @@ const Maintenance = lazy(() =>
 );
 
 function ApplicationStatus() {
-  // TODO: FOR API HANDOFF
+  // TODO: Implement Custom Hook
   const MaintenanceMode = false;
 
   return <NoSsr defer>{MaintenanceMode ? <Maintenance /> : <Outlet />}</NoSsr>;

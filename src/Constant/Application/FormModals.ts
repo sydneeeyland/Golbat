@@ -14,11 +14,16 @@ export const FleetForm = lazy(
   () => import('../../Components/Modal/Fleet/FleetForm')
 );
 
+export const DepartureForm = lazy(() => import("../../Components/Modal/Departure/DepartureForm"));
+export const DepartureBox = lazy(() => import("../../Components/Modal/Departure/ImportBoxForm"));
+
 export const FormModalByModuleType = {
   packinglist: PackinglistForm,
   emptybox: EmptyBoxForm,
   dispatch: DispatchAndDeliveryForm,
   fleet: FleetForm,
+  departure: DepartureForm,
+  departure_box: DepartureBox
 };
 
 export const config = [];

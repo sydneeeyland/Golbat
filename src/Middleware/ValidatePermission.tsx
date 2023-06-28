@@ -14,9 +14,10 @@ function ValidatePermission({ route, children }: Props) {
   const permission = [
     'Dashboard',
     'Packinglist',
-    'Emptybox',
+    'Invoice',
     'Dispatch & Delivery',
     'Fleet',
+    'Departure',
     'Telemarketing',
   ];
   return (

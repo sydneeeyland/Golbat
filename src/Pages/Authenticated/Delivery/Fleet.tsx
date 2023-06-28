@@ -43,7 +43,12 @@ function Fleet() {
       </FormContainer>
       <Box sx={{ mt: 3 }}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <FormTable module={Module.FLEET} />
+          <FormTable
+            module={Module.FLEET}
+            rowActions
+            rowSelection={false}
+            rowFilters
+          />
         </ErrorBoundary>
       </Box>
     </NoSsr>

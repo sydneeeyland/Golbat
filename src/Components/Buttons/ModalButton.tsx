@@ -1,4 +1,4 @@
-import { useState, memo, useCallback } from 'react';
+import { useState, memo, useCallback, ReactNode } from 'react';
 
 import { AddCircle } from '@mui/icons-material';
 
@@ -11,15 +11,19 @@ type Props = {
   module: string;
   content: string;
   maxWidth: string;
+  variant?: string;
+  icon?: ReactNode;
 };
 
-function ActionTab({ module, content, maxWidth }: Props) {
+function ActionTab({ module, content, maxWidth, variant, icon }: Props) {
   const [displayModal, setDisplayModal] = useState({
     packinglist: false,
     emptybox: false,
     pickup: false,
     dispatch: false,
     fleet: false,
+    departure: false,
+    departure_box: false,
   });
 
   const DisplayModal =
@@ -38,8 +42,8 @@ function ActionTab({ module, content, maxWidth }: Props) {
   return (
     <NoSsr defer fallback={<ActionButtonLoading />}>
       <Button
-        variant="csi-primary"
-        startIcon={<AddCircle />}
+        variant={(variant as 'csi-primary') || 'csi-primary'}
+        startIcon={icon ? icon : <AddCircle />}
         size="small"
         onClick={HandleDisplayModal}
       >

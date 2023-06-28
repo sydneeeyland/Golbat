@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { NoSsr, Box } from '@mui/material';
+import { NoSsr, Box, Stack } from '@mui/material';
 
 import { useSidebarStyle } from '../Assets/Styles/MainLayoutStyles';
 
@@ -10,6 +10,7 @@ import User from '../Modules/Layout/User';
 import Notification from '../Modules/Layout/Notification';
 import Announcement from '../Modules/Layout/Announcement';
 import LoadingComponent from '../Components/Loading/LoadingComponent';
+import ErrorPrompt from '../Modules/Layout/ErrorPrompt';
 
 function Main() {
   const Style = useSidebarStyle();
@@ -20,7 +21,7 @@ function Main() {
   };
 
   return (
-    <>
+    <NoSsr defer>
       <Box id="header" className={Style.header}>
         <CompanyHeading title={import.meta.env.VITE_APPLICATION_NAME} />
         <Box
@@ -28,20 +29,19 @@ function Main() {
           className="bi bi-list toggle-sidebar-btn"
           onClick={() => HandleSidebarToggle()}
         />
-        <Box
-          style={{
-            display: 'flex',
-            flex: 1,
-            justifyContent: 'end',
-            marginRight: 20,
-            gap: 10,
-          }}
+        <Stack
+          direction="row"
+          flex={1}
+          justifyContent="end"
+          spacing="10px"
+          marginRight="20px"
         >
           <Announcement />
           <Notification />
           <User />
-        </Box>
+        </Stack>
       </Box>
+      <ErrorPrompt />
       <Box id="aside" className={Style.sidebar}>
         <Sidebar />
       </Box>
@@ -50,7 +50,7 @@ function Main() {
           <Outlet />
         </NoSsr>
       </Box>
-    </>
+    </NoSsr>
   );
 }
 

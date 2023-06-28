@@ -6,13 +6,24 @@ import MaterialReactTable, {
   // MRT_ColumnFiltersState,
 } from 'material-react-table';
 
+import { MenuItem, ListItemIcon, Box, Typography } from '@mui/material';
+import { Edit, Delete } from '@mui/icons-material';
+
 import { tableColumnConfig } from '../../Constant/Application/Table';
 
 type FormTableProps = {
   module: string;
+  rowActions: boolean;
+  rowSelection: boolean;
+  rowFilters: boolean;
 };
 
-function FormTable({ module }: FormTableProps) {
+function FormTable({
+  module,
+  rowActions,
+  rowSelection,
+  rowFilters,
+}: FormTableProps) {
   const data = useSelector((store: any) => store?.application[module]);
   const { loading } = useSelector((store: any) => store.application);
 
@@ -29,14 +40,18 @@ function FormTable({ module }: FormTableProps) {
       enableFullScreenToggle={false}
       enableHiding={false}
       enableGlobalFilter={false}
+      enableColumnResizing
+      layoutMode="grid" //instead of the default "semantic" layout mode
+      enableColumnFilters={rowFilters}
       enableGrouping
       enableColumnVirtualization
       enableRowVirtualization
-      enableRowSelection
+      enableRowActions={rowActions}
+      enableRowSelection={rowSelection}
       enableStickyHeader
       // onColumnFiltersChange={setColumnFilters}
       state={{ isLoading: loading }}
-      initialState={{ density: 'compact', showColumnFilters: true }}
+      initialState={{ density: 'compact', showColumnFilters: rowFilters }}
       muiTableProps={{ sx: { tableLayout: 'fixed' } }}
       muiTopToolbarProps={{ sx: { borderRadius: 6 } }}
       muiBottomToolbarProps={{
@@ -48,6 +63,20 @@ function FormTable({ module }: FormTableProps) {
           borderRadius: 6,
         },
       }}
+      renderRowActionMenuItems={({ row }) => [
+        <MenuItem key={0} sx={{ m: 0 }} onClick={() => console.log(row)}>
+          <ListItemIcon>
+            <Edit />
+          </ListItemIcon>
+          Edit
+        </MenuItem>,
+        <MenuItem key={1} sx={{ m: 0 }}>
+          <ListItemIcon>
+            <Delete />
+          </ListItemIcon>
+          Delete
+        </MenuItem>,
+      ]}
     />
   );
 }

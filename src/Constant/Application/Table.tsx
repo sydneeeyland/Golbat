@@ -4,45 +4,47 @@ export const tableColumnConfig = {
     {
       accessorKey: 'origin',
       header: 'Origin',
-      maxSize: 180,
-      minSize: 180,
     },
     {
       accessorKey: 'company',
       header: 'Company',
-      maxSize: 190,
-      minSize: 190,
     },
     {
       accessorKey: 'agent',
       header: 'Agent',
-      maxSize: 190,
-      minSize: 190,
     },
     {
       accessorKey: 'boxNumber',
       header: 'Box #',
-      maxSize: 150,
-      minSize: 150,
+
+      enableClickToCopy: true,
     },
     {
       accessorKey: 'size',
       header: 'Size',
-      maxSize: 100,
-      minSize: 100,
+
+      // Cell: ({ cell }: any) => (
+      //   <div
+      //     style={{
+      //       backgroundColor: '#E1E3EA',
+      //       padding: '0.25rem',
+      //       borderRadius: '6px',
+      //       color: 'black',
+      //     }}
+      //   >
+      //     {cell.getValue()}
+      //   </div>
+      // ),
     },
     {
       accessorKey: 'equivalent',
       header: 'Equivalent',
-      maxSize: 160,
-      minSize: 160,
     },
     {
       accessorFn: (row: any) =>
         `${row.lastName_s}, ${row.firstName_s} | ${row.contactNumber_s} | ${row.prefecture}, ${row.city_jp}, ${row.town_jp}, ${row.adderss_s}`,
       header: 'Sender',
-      maxSize: 550,
-      minSize: 550,
+      enableClickToCopy: true,
     },
   ],
   emptybox: [],
@@ -92,6 +94,48 @@ export const tableColumnConfig = {
     {
       accessorFn: (row: any) => `${row.helper} | ${row.helperContactNumber}`,
       header: 'Helper',
+    },
+    {
+      accessorKey: 'status',
+      header: 'Status',
+    },
+  ],
+  departure: [
+    {
+      accessorKey: 'shipmentId',
+      header: 'Shipment',
+    },
+    {
+      accessorKey: 'vessel',
+      header: 'Vessel',
+    },
+    {
+      accessorFn: (row: any) => `${row.departed} | ${row.departureDate}`,
+      header: 'Departed',
+    },
+    {
+      accessorKey: 'eta',
+      header: 'Estimated Arrival',
+    },
+    {
+      accessorFn: (row: any) => `${row.arrived} | ${row.arrivedDate}`,
+      header: 'Arrived',
+    },
+    {
+      accessorKey: 'billed',
+      header: 'Billed',
+    },
+    {
+      accessorKey: 'boxes',
+      header: 'No. of Boxes',
+    },
+    {
+      accessorKey: 'origin',
+      header: 'Origin',
+    },
+    {
+      accessorKey: 'destination',
+      header: 'Destination',
     },
     {
       accessorKey: 'status',

@@ -19,11 +19,12 @@ import AutoComplete from '../../Components/Form/AutoComplete';
 import useWebSocket from '../../Hooks/useWebSocket';
 import useTelemarketing from '../../Hooks/Service/useTelemarketing';
 import ErrorFallback from '../../Middleware/ErrorFallback';
+import ContactList from '../../Modules/Telemarketing/ContactList';
 
 function Telemarketing() {
-  const { list, sendMessage } = useWebSocket();
+  const { list, filteredContactList } = useWebSocket();
   const { toggleFilterDrawer, handleToggleFilterDrawer } = useTelemarketing();
-
+  // TODO: Websocket function, needs API to proceed
   return (
     <NoSsr defer>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
@@ -48,51 +49,7 @@ function Telemarketing() {
         </Stack>
       </FormContainer>
       <FormContainer>
-        <table>
-          <tr>
-            <th>Phone</th>
-            <th>Name</th>
-            <th>Company</th>
-            <th>Agent</th>
-            <th>Last Order Date</th>
-            <th>Date PL</th>
-            <th>Action</th>
-          </tr>
-          <tr>
-            <td>Kennedy</td>
-            <td>Stanley</td>
-            <td>Hanson</td>
-            <td>Harper</td>
-            <td>Sullivan</td>
-            <td>Grant</td>
-            <td>
-              <button
-                type="button"
-                onClick={() => sendMessage(1)}
-                style={{ backgroundColor: list['1'] ? 'red' : 'blue' }}
-              >
-                {list['1'] ? 'Calling...' : 'Call'}
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Brock</td>
-            <td>Sandoval</td>
-            <td>Fernandez</td>
-            <td>Atkins</td>
-            <td>Pratt</td>
-            <td>Roberts</td>
-            <td>
-              <button
-                type="button"
-                onClick={() => sendMessage(2)}
-                style={{ backgroundColor: list['2'] ? 'red' : 'blue' }}
-              >
-                {list['2'] ? 'Calling...' : 'Call'}
-              </button>
-            </td>
-          </tr>
-        </table>
+        <ContactList contacts={list} />
       </FormContainer>
 
       <Drawer
@@ -132,6 +89,7 @@ function Telemarketing() {
             variant="csi-secondary"
             startIcon={<Search />}
             size="small"
+            onClick={filteredContactList}
             fullWidth
           >
             Filter data

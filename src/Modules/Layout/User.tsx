@@ -15,7 +15,10 @@ import { Settings, Logout } from '@mui/icons-material';
 
 import { UserMenuPaperProps } from '../../Assets/Styles/MainLayoutStyles';
 
+import useValidateAuth from '../../Hooks/useValidateAuth';
+
 function User() {
+  const { handleLogout } = useValidateAuth();
   const [showMenu, setShowMenu] = useState(false);
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
 
@@ -64,7 +67,7 @@ function User() {
           </ListItemIcon>
           Account Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
