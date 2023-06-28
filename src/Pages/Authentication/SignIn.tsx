@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
 
 import {
@@ -14,10 +15,8 @@ import {
 import { Form } from 'react-bootstrap';
 
 import useValidateAuth from '../../Hooks/useValidateAuth';
-import { auth } from '../../Redux/Slice/auth-slice';
 
 export default function SignIn() {
-  // TODO: USEREF FOR EMAIL,PASSWORD
   const userEmail: any = useRef();
   const userPassword: any = useRef();
   const { authState, validateAuth } = useValidateAuth();
@@ -25,7 +24,7 @@ export default function SignIn() {
   useEffect(() => {
     document.title = 'Chenvel Services Inc ';
   }, []);
-  console.log(authState);
+
   return (
     <form
       onSubmit={(e) => {

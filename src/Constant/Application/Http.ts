@@ -6,14 +6,15 @@ export const MethodTypes = {
 };
 
 export const ErrorTypes = {
-  FETCH: "FETCH_ERROR"
+  FETCH: 'FETCH_ERROR',
 };
 
 export const ErrorContents = {
-  FETCH: "Encountered and error while fetching records, Please check your internet connection."
-}
+  FETCH:
+    'Encountered and error while fetching records, Please check your internet connection.',
+};
 
 export const StatusCodes = {
-  'OK': 200,
-  'BAD_REQUEST': 400
-}
+  OK: 200,
+  BAD_REQUEST: 400,
+};

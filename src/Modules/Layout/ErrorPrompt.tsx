@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -17,7 +18,7 @@ function ErrorPrompt() {
     if (error) {
       setErrorType(error);
     }
-  }, []);
+  }, [error]);
 
   return (
     <Snackbar

@@ -6,7 +6,7 @@ import MaterialReactTable, {
   // MRT_ColumnFiltersState,
 } from 'material-react-table';
 
-import { MenuItem, ListItemIcon, Box, Typography } from '@mui/material';
+import { MenuItem, ListItemIcon } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 
 import { tableColumnConfig } from '../../Constant/Application/Table';
@@ -41,7 +41,7 @@ function FormTable({
       enableHiding={false}
       enableGlobalFilter={false}
       enableColumnResizing
-      layoutMode="grid" //instead of the default "semantic" layout mode
+      layoutMode="grid"
       enableColumnFilters={rowFilters}
       enableGrouping
       enableColumnVirtualization
@@ -63,8 +63,8 @@ function FormTable({
           borderRadius: 6,
         },
       }}
-      renderRowActionMenuItems={({ row }) => [
-        <MenuItem key={0} sx={{ m: 0 }} onClick={() => console.log(row)}>
+      renderRowActionMenuItems={() => [
+        <MenuItem key={0} sx={{ m: 0 }} onClick={() => {}}>
           <ListItemIcon>
             <Edit />
           </ListItemIcon>

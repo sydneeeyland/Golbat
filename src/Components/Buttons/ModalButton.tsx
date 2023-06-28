@@ -42,8 +42,8 @@ function ActionTab({ module, content, maxWidth, variant, icon }: Props) {
   return (
     <NoSsr defer fallback={<ActionButtonLoading />}>
       <Button
-        variant={(variant as 'csi-primary') || 'csi-primary'}
-        startIcon={icon ? icon : <AddCircle />}
+        variant={variant as 'csi-primary'}
+        startIcon={icon}
         size="small"
         onClick={HandleDisplayModal}
       >
@@ -58,5 +58,10 @@ function ActionTab({ module, content, maxWidth, variant, icon }: Props) {
     </NoSsr>
   );
 }
+
+ActionTab.defaultProps = {
+  variant: 'csi-primary',
+  icon: <AddCircle />,
+};
 
 export default memo(ActionTab);

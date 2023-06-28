@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+import { useState, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import Cookies from 'universal-cookie';
 
@@ -6,7 +7,9 @@ import { useValidateAuthorizationMutation } from '../Redux/Slice/auth-slice';
 import { StatusCodes } from '../Constant/Application/Http';
 
 export default function useValidateAuth() {
-  const cookie = new Cookies();
+  const cookie = useMemo(() => {
+    return new Cookies();
+  }, []);
   const applicationStore = useSelector((store: any) => store);
   const [validateAuth] = useValidateAuthorizationMutation();
   const [authState, setAuthState] = useState({
@@ -34,7 +37,7 @@ export default function useValidateAuth() {
       message: '',
       signedIn: cookie.get('RefreshToken') !== undefined,
     }));
-  }, []);
+  }, [cookie]);
 
   useEffect(() => {
     const { message, status } = applicationStore.auth.error;
@@ -68,7 +71,7 @@ export default function useValidateAuth() {
         loading: applicationStore.auth.loading,
       }));
     }
-  }, [applicationStore]);
+  }, [applicationStore, cookie]);
 
   return { authState, validateAuth, handleLogout };
 }

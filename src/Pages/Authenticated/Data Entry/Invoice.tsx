@@ -52,7 +52,7 @@ function Invoice() {
         </ErrorBoundary>
       </FormContainer>
       <Box sx={{ mt: 3 }}>
-        <ErrorBoundary FallbackComponent={ErrorFallback}></ErrorBoundary>
+        {/* <ErrorBoundary FallbackComponent={ErrorFallback}></ErrorBoundary> */}
       </Box>
     </NoSsr>
   );

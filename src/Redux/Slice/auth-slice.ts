@@ -1,7 +1,9 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { createSlice } from '@reduxjs/toolkit';
-import { apiSlice } from './api-slice';
 import jwt from 'jwt-decode';
 import Cookies from 'universal-cookie';
+
+import { apiSlice } from './api-slice';
 
 import { MethodTypes, StatusCodes } from '../../Constant/Application/Http';
 
@@ -50,18 +52,18 @@ export const authorizationAPI = apiSlice.injectEndpoints({
           if (meta?.response?.status === StatusCodes.OK) {
             const cookies = new Cookies();
 
-            const auth: string | any =
+            const authToken: string | any =
               meta.response.headers.get('Authorization');
-            const refresh: string | any =
+            const refreshToken: string | any =
               meta.response.headers.get('refreshToken');
 
-            const decodedAuth: any = jwt(auth);
-            const decodedRefresh: any = jwt(refresh);
+            const decodedAuth: any = jwt(authToken);
+            const decodedRefresh: any = jwt(refreshToken);
 
             cookies.set('Authorization', auth, {
               expires: new Date(decodedAuth.exp * 1000),
             });
-            cookies.set('RefreshToken', refresh, {
+            cookies.set('RefreshToken', refreshToken, {
               expires: new Date(decodedRefresh.exp * 1000),
             });
 
