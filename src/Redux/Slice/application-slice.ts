@@ -1,7 +1,12 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { createSlice } from '@reduxjs/toolkit';
 import { apiSlice } from './api-slice';
 
-import { MethodTypes } from '../../Constant/Application/Http';
+import {
+  MethodTypes,
+  ErrorTypes,
+  ErrorContents,
+} from '../../Constant/Application/Http';
 
 export const application = createSlice({
   name: 'application',
@@ -17,6 +22,7 @@ export const application = createSlice({
     fleet: [],
     roaming: [],
     telemarketing: [],
+    departure: [],
     loading: false,
     error: [],
   },
@@ -30,8 +36,8 @@ export const application = createSlice({
       loading: payload,
     }),
     handleError: (state, { payload }) => ({
-      ...state.error,
-      ...payload,
+      ...state,
+      error: payload,
     }),
   },
 });
@@ -58,8 +64,19 @@ export const applicationApi = apiSlice.injectEndpoints({
           const { data } = await queryFulfilled;
           dispatch(updatePackinglist(data));
           dispatch(handleAsyncFetch(false));
-        } catch (err) {
-          dispatch(handleError(err));
+        } catch (err: any) {
+          const { error } = err;
+          if (error.status === 'FETCH_ERROR') {
+            dispatch(handleAsyncFetch(false));
+            dispatch(
+              handleError({
+                open: true,
+                type: ErrorTypes.FETCH,
+                variant: 'warning',
+                content: ErrorContents.FETCH,
+              })
+            );
+          }
         }
       },
     }),

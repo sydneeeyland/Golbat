@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { useDispatch } from 'react-redux';
 
-import { Autocomplete, NoSsr, TextField } from '@mui/material';
-import LoadingComponent from '../Loading/LoadingComponent';
+import { Autocomplete, TextField } from '@mui/material';
 
 import { handleInputChange } from '../../Redux/Slice/transaction-slice';
 
@@ -25,24 +24,22 @@ function AutoComplete({
 }: Props) {
   const dispatch = useDispatch();
   return (
-    <NoSsr defer fallback={<LoadingComponent />}>
-      <Autocomplete
-        id={id}
-        size="small"
-        options={options}
-        defaultValue={selectedValue}
-        renderInput={(params) => (
-          <TextField {...params} label={label} required={required} />
-        )}
-        autoHighlight
-        disablePortal
-        ListboxProps={{ style: { maxHeight: 110 } }}
-        sx={{ pb: 1 }}
-        onChange={(_, { value }: any) =>
-          dispatch(handleInputChange({ [id]: value, module }))
-        }
-      />
-    </NoSsr>
+    <Autocomplete
+      id={id}
+      size="small"
+      options={options}
+      defaultValue={selectedValue}
+      renderInput={(params) => (
+        <TextField {...params} label={label} required={required} />
+      )}
+      autoHighlight
+      disablePortal
+      ListboxProps={{ style: { maxHeight: 110 } }}
+      sx={{ pb: 1 }}
+      onChange={(_, { value }: any) =>
+        dispatch(handleInputChange({ [id]: value, module }))
+      }
+    />
   );
 }
 

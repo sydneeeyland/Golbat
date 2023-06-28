@@ -19,6 +19,8 @@ export const Packinglist = lazy(
 export const Emptybox = lazy(
   () => import('./Authenticated/Data Entry/Emptybox')
 );
+export const Pickups = lazy(() => import('./Authenticated/Data Entry/Pickups'));
+export const Invoice = lazy(() => import('./Authenticated/Data Entry/Invoice'));
 
 // Delivery
 export const DispatchAndDelivery = lazy(
@@ -26,6 +28,9 @@ export const DispatchAndDelivery = lazy(
 );
 export const Fleet = lazy(() => import('./Authenticated/Delivery/Fleet'));
 export const Roaming = lazy(() => import('./Authenticated/Delivery/Roaming'));
+
+// Departure
+export const Departure = lazy(() => import('./Authenticated/Departure'));
 
 // Telemarketing
 export const Telemarketing = lazy(

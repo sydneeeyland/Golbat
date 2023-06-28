@@ -33,7 +33,7 @@ function DispatchAndDelivery() {
               <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <ModalButton
                   module={Module.DISPATCH}
-                  content="Add Record"
+                  content="Create Delivery Trip"
                   maxWidth="lg"
                 />
               </ErrorBoundary>
@@ -43,7 +43,12 @@ function DispatchAndDelivery() {
       </FormContainer>
       <Box sx={{ mt: 3 }}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <FormTable module={Module.DISPATCH} />
+          <FormTable
+            module={Module.DISPATCH}
+            rowActions
+            rowSelection={false}
+            rowFilters
+          />
         </ErrorBoundary>
       </Box>
     </NoSsr>

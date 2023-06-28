@@ -34,6 +34,15 @@ export const Default = [
     ],
   },
   {
+    name: 'Departure',
+    icon: 'bi bi-ui-checks-grid',
+    withChildren: false,
+    url: '/Departure',
+    isHidden: false,
+    target: 'null',
+    children: [],
+  },
+  {
     name: 'Warehouse',
     alias: 'warehouse',
     icon: 'bi bi-truck',

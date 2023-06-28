@@ -5,6 +5,7 @@ declare module '@mui/material/Button' {
     'csi-primary': true;
     'csi-secondary': true;
     'csi-warning': true;
+    'csi-danger': true;
   }
 }
 
@@ -53,6 +54,19 @@ const theme = createTheme({
             padding: '6px 11px',
             '&:hover': {
               backgroundColor: '#f1bc00',
+            },
+          },
+        },
+        {
+          props: { variant: 'csi-danger' },
+          style: {
+            color: '#FFFFFF',
+            backgroundColor: '#ff4d4f',
+            lineHeight: 'unset',
+            fontFamily: 'unset',
+            padding: '6px 11px',
+            '&:hover': {
+              backgroundColor: '#a8071a',
             },
           },
         },

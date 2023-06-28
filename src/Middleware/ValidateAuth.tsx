@@ -12,9 +12,9 @@ const SignIn = lazy(() =>
 );
 
 function ValidateAuth() {
-  const { signedIn } = useValidateAuth();
+  const { authState } = useValidateAuth();
 
-  return <NoSsr defer>{signedIn ? <Outlet /> : <SignIn />}</NoSsr>;
+  return <NoSsr defer>{authState.signedIn ? <Outlet /> : <SignIn />}</NoSsr>;
 }
 
 export default ValidateAuth;

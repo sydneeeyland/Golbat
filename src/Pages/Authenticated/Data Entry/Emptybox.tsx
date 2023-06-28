@@ -33,7 +33,7 @@ function Emptybox() {
               <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <ModalButton
                   module={Module.EMPTYBOX}
-                  content="Add Record"
+                  content="Create Emptybox"
                   maxWidth="lg"
                 />
               </ErrorBoundary>
@@ -43,7 +43,12 @@ function Emptybox() {
       </FormContainer>
       <Box sx={{ mt: 3 }}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <FormTable module={Module.EMPTYBOX} />
+          <FormTable
+            module={Module.EMPTYBOX}
+            rowActions
+            rowSelection={false}
+            rowFilters
+          />
         </ErrorBoundary>
       </Box>
     </NoSsr>
