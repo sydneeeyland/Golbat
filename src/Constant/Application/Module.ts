@@ -4,7 +4,7 @@ export const Module = {
   PICKUPS: '',
   DISPATCH: 'dispatch',
   FLEET: 'fleet',
-  ROAMING: 'roaming'
+  ROAMING: 'roaming',
 };
 
 export const moduleInitialState = {

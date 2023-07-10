@@ -6,10 +6,15 @@ import {
   Button,
   Grid,
   NoSsr,
+  Breakpoint,
 } from '@mui/material';
 import Text from '../Form/Text';
 
-import { LineNumbers, RowNumbers, Stacks, } from '../../Constant/Application/Common';
+import {
+  LineNumbers,
+  RowNumbers,
+  Stacks,
+} from '../../Constant/Application/Common';
 import { Module } from '../../Constant/Application/Module';
 import { TextInputTypes } from '../../Constant/Application/Validation';
 import LoadingComponent from '../Loading/LoadingComponent';
@@ -18,7 +23,7 @@ import AutoComplete from '../Form/AutoComplete';
 type Props = {
   open: boolean;
   close: () => void;
-  maxWidth: any;
+  maxWidth: Breakpoint;
 };
 
 function EmptyBoxForm({ open, close, maxWidth }: Props) {
