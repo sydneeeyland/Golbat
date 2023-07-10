@@ -17,6 +17,7 @@ function ValidatePermission({ route, children }: Props) {
     'Emptybox',
     'Dispatch & Delivery',
     'Fleet',
+    'Roaming',
   ];
   return (
     <NoSsr defer>

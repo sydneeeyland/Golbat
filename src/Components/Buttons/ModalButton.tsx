@@ -20,6 +20,7 @@ function ActionTab({ module, content, maxWidth }: Props) {
     pickup: false,
     dispatch: false,
     fleet: false,
+    roaming: false,
   });
 
   const DisplayModal =
