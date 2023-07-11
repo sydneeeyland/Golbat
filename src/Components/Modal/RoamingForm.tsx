@@ -18,7 +18,7 @@ import AutoComplete from '../Form/AutoComplete';
 type Props = {
   open: boolean;
   close: () => void;
-  maxWidth: any;
+  maxWidth: false;
 };
 
 function EmptyBoxForm({ open, close, maxWidth }: Props) {
