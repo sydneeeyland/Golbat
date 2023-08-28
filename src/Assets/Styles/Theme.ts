@@ -6,6 +6,7 @@ declare module '@mui/material/Button' {
     'csi-secondary': true;
     'csi-warning': true;
     'csi-danger': true;
+    'csi-social-facebook': true;
   }
 }
 
@@ -67,6 +68,19 @@ const theme = createTheme({
             padding: '6px 11px',
             '&:hover': {
               backgroundColor: '#a8071a',
+            },
+          },
+        },
+        {
+          props: { variant: 'csi-social-facebook' },
+          style: {
+            color: '#FFFFFF',
+            backgroundColor: '#4e71ba',
+            lineHeight: 'unset',
+            fontFamily: 'unset',
+            padding: '6px 11px',
+            '&:hover': {
+              backgroundColor: '#2f477a',
             },
           },
         },

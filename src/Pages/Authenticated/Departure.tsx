@@ -5,7 +5,7 @@ import { Archive } from '@mui/icons-material';
 import BreadCrumb from '../../Components/BreadCrumb';
 import FormContainer from '../../Components/Container/FormContainer';
 
-import ErrorFallback from '../../Middleware/ErrorFallback';
+import ErrorFallback from '../../Utils/ErrorFallback';
 import ModalButton from '../../Components/Buttons/ModalButton';
 import FormTable from '../../Components/Table/FormTable';
 

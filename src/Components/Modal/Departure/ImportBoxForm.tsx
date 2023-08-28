@@ -13,7 +13,7 @@ import {
 import AutoComplete from '../../Form/AutoComplete';
 import Text from '../../Form/Text';
 import FormTable from '../../Table/FormTable';
-import ErrorFallback from '../../../Middleware/ErrorFallback';
+import ErrorFallback from '../../../Utils/ErrorFallback';
 
 import { Module } from '../../../Constant/Application/Module';
 import TableLoading from '../../Loading/Skeleton/TableLoading';

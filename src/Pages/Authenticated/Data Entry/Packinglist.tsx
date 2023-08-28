@@ -4,7 +4,7 @@ import { NoSsr, Stack, Box } from '@mui/material';
 import BreadCrumb from '../../../Components/BreadCrumb';
 import FormContainer from '../../../Components/Container/FormContainer';
 
-import ErrorFallback from '../../../Middleware/ErrorFallback';
+import ErrorFallback from '../../../Utils/ErrorFallback';
 import ModalButton from '../../../Components/Buttons/ModalButton';
 import SyncButton from '../../../Components/Buttons/SyncButton';
 import FormTable from '../../../Components/Table/FormTable';

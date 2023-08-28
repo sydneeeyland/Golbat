@@ -19,6 +19,9 @@ function ValidatePermission({ route, children }: Props) {
     'Fleet',
     'Departure',
     'Telemarketing',
+    'Accounts',
+    'Common',
+    'UserProfile',
   ];
   return (
     <NoSsr defer>

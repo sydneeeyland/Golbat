@@ -1,4 +1,5 @@
 import { useState, memo, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   NoSsr,
@@ -18,6 +19,7 @@ import { UserMenuPaperProps } from '../../Assets/Styles/MainLayoutStyles';
 import useValidateAuth from '../../Hooks/useValidateAuth';
 
 function User() {
+  const navigate = useNavigate();
   const { handleLogout } = useValidateAuth();
   const [showMenu, setShowMenu] = useState(false);
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
@@ -58,14 +60,14 @@ function User() {
         sx={{ left: -5 }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> My statistics
+          <Avatar /> Statistics
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => navigate('/user/profile')}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
-          Account Settings
+          User Profile
         </MenuItem>
         <MenuItem onClick={handleLogout}>
           <ListItemIcon>

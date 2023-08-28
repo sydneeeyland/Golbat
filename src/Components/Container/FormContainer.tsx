@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Box } from '@mui/material';
+import { Container } from '@mui/material';
 
 import { useActionContainerStyles } from '../../Assets/Styles/ContainerStyle';
 
@@ -9,9 +9,13 @@ type Props = {
 };
 
 function FormContainer({ children }: Props) {
-  const Container = useActionContainerStyles();
+  const Containers = useActionContainerStyles();
 
-  return <Box className={Container.default}>{children}</Box>;
+  return (
+    <Container className={Containers.default} maxWidth={false}>
+      {children}
+    </Container>
+  );
 }
 
 export default FormContainer;

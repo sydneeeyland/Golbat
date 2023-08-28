@@ -4,7 +4,7 @@ import { Call } from '@mui/icons-material';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
-import ErrorFallback from '../../Middleware/ErrorFallback';
+import ErrorFallback from '../../Utils/ErrorFallback';
 
 type Props = {
   contacts: {

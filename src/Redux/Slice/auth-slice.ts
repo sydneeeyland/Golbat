@@ -59,7 +59,7 @@ export const authorizationAPI = apiSlice.injectEndpoints({
 
             const decodedAuth: any = jwt(authToken);
             const decodedRefresh: any = jwt(refreshToken);
-
+            
             cookies.set('Authorization', auth, {
               expires: new Date(decodedAuth.exp * 1000),
             });

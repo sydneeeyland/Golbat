@@ -11,7 +11,7 @@ export const Default = [
   {
     name: 'Data entry',
     alias: 'dataentry',
-    icon: 'bi bi-sliders',
+    icon: 'bi bi-clipboard-data',
     withChildren: true,
     target: 'dataentry-nav',
     children: [
@@ -71,5 +71,22 @@ export const Default = [
     isHidden: false,
     target: 'null',
     children: [],
+  },
+  {
+    name: 'Settings',
+    alias: 'settings',
+    icon: 'bi bi-sliders',
+    withChildren: true,
+    target: 'settings-nav',
+    children: [
+      {
+        name: 'Common',
+        url: '/settings/common',
+      },
+      {
+        name: 'Accounts',
+        url: '/settings/accounts',
+      },
+    ],
   },
 ];

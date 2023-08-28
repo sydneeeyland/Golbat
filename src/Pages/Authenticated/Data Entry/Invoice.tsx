@@ -6,7 +6,7 @@ import FormContainer from '../../../Components/Container/FormContainer';
 import AutoComplete from '../../../Components/Form/AutoComplete';
 import Text from '../../../Components/Form/Text';
 
-import ErrorFallback from '../../../Middleware/ErrorFallback';
+import ErrorFallback from '../../../Utils/ErrorFallback';
 
 import { Module } from '../../../Constant/Application/Module';
 import { TextInputTypes } from '../../../Constant/Application/Validation';

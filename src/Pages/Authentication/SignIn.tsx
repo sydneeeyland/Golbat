@@ -1,5 +1,5 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   Grid,
@@ -13,6 +13,8 @@ import {
   Alert,
 } from '@mui/material';
 import { Form } from 'react-bootstrap';
+
+import { Facebook } from '@mui/icons-material';
 
 import useValidateAuth from '../../Hooks/useValidateAuth';
 
@@ -54,9 +56,9 @@ export default function SignIn() {
               overflow: 'hidden',
               position: 'relative',
               border: 'none rgb(230, 235, 241)',
-              borderRadius: '4px',
+              borderRadius: '6px',
               boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 4px',
-              width: '400px',
+              width: '450px',
             }}
           >
             <Box sx={{ padding: '32px' }}>
@@ -77,7 +79,7 @@ export default function SignIn() {
                 sx={{ marginTop: '24px' }}
               >
                 <Typography>Employee ID</Typography>
-                <Form.Control type="text" ref={userEmail} />
+                <Form.Control type="text" ref={userEmail} required />
               </Stack>
               <Stack
                 flexDirection="column"
@@ -85,7 +87,7 @@ export default function SignIn() {
                 sx={{ marginTop: '24px' }}
               >
                 <Typography>Password</Typography>
-                <Form.Control type="password" ref={userPassword} />
+                <Form.Control type="password" ref={userPassword} required />
               </Stack>
               <Stack
                 flexDirection="row"
@@ -106,9 +108,29 @@ export default function SignIn() {
                   variant="csi-primary"
                   sx={{ padding: '10px' }}
                   fullWidth
-                  disabled={authState.loading}
+                  disabled={authState.loading || authState.status === 200}
                 >
                   {authState.loading ? <CircularProgress size={20} /> : 'Login'}
+                </Button>
+              </Box>
+              <Box sx={{ marginTop: '15px', textAlign: 'center' }}>
+                <Typography
+                  sx={{
+                    marginBottom: '15px',
+                    color: '#A9A9A9',
+                    fontSize: '14px',
+                  }}
+                >
+                  OR
+                </Typography>
+                <Button
+                  startIcon={<Facebook />}
+                  type="button"
+                  variant="csi-social-facebook"
+                  sx={{ padding: '10px' }}
+                  fullWidth
+                >
+                  Facebook
                 </Button>
               </Box>
             </Box>

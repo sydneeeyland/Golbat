@@ -18,7 +18,7 @@ import AutoComplete from '../../Components/Form/AutoComplete';
 
 import useWebSocket from '../../Hooks/useWebSocket';
 import useTelemarketing from '../../Hooks/Service/useTelemarketing';
-import ErrorFallback from '../../Middleware/ErrorFallback';
+import ErrorFallback from '../../Utils/ErrorFallback';
 import ContactList from '../../Modules/Telemarketing/ContactList';
 
 function Telemarketing() {

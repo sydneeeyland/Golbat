@@ -1,18 +1,18 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { NoSsr } from '@mui/material';
-import BreadCrumb from '../../Components/BreadCrumb';
+import BreadCrumb from '../../../../Components/BreadCrumb';
 
-import ErrorFallback from '../../Utils/ErrorFallback';
+import ErrorFallback from '../../../../Utils/ErrorFallback';
 
-function Dashboard() {
+function Profile() {
   return (
     <NoSsr defer>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <BreadCrumb page="Dashboard" />
+        <BreadCrumb page="Profile" />
       </ErrorBoundary>
     </NoSsr>
   );
 }
 
-export default Dashboard;
+export default Profile;

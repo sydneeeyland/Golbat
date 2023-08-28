@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import { Box, NoSsr } from '@mui/material';
+import { Box, NoSsr, Typography } from '@mui/material';
 
 import { Default as SidebarConfig } from '../../Constant/Sidebar/Default';
 
@@ -22,9 +22,9 @@ function Sidebar() {
                   data-bs-toggle="collapse"
                   href="."
                 >
-                  <i className={`${icon}`} />
-                  <span>{name}</span>
-                  <i className="bi bi-chevron-down ms-auto" />
+                  <Typography component="i" className={`${icon}`} />
+                  <Box component="span">{name}</Box>
+                  <Typography className="bi bi-chevron-down ms-auto" />
                 </Box>
                 <Box
                   component="ul"
@@ -41,8 +41,8 @@ function Sidebar() {
                           }
                           to={`${key.url}`}
                         >
-                          <i className="bi bi-circle" />
-                          <span>{key.name}</span>
+                          <Typography component="i" className="bi bi-circle" />
+                          <Box component="span">{key.name}</Box>
                         </NavLink>
                       </Box>
                     );
@@ -58,8 +58,8 @@ function Sidebar() {
                   to={`${url}`}
                   style={{ display: isHidden ? 'none' : 'block' }}
                 >
-                  <i className={`${icon}`} />
-                  <span>{name}</span>
+                  <Typography component="i" className={`${icon}`} />
+                  <Box component="span">{name}</Box>
                 </NavLink>
               </Box>
             );
