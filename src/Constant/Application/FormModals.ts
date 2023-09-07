@@ -21,6 +21,11 @@ export const DepartureBox = lazy(
   () => import('../../Components/Modal/Departure/ImportBoxForm')
 );
 
+export const CountryForm = lazy(() => import("../../Components/Modal/Common/CountryForm"));
+export const StateForm = lazy(() => import("../../Components/Modal/Common/StateForm"));
+export const CityForm = lazy(() => import("../../Components/Modal/Common/CityForm"));
+export const TownForm = lazy(() => import("../../Components/Modal/Common/TownForm"));
+
 export const FormModalByModuleType = {
   packinglist: PackinglistForm,
   emptybox: EmptyBoxForm,
@@ -28,6 +33,10 @@ export const FormModalByModuleType = {
   fleet: FleetForm,
   departure: DepartureForm,
   departure_box: DepartureBox,
+  country: CountryForm,
+  state: StateForm,
+  city: CityForm,
+  town: TownForm
 };
 
 export const config = [];

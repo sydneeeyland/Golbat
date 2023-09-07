@@ -3,6 +3,7 @@ import { Stack } from '@mui/material';
 import Announcement from './Announcement';
 import Notification from './Notification';
 import User from './User';
+import Darkmode from './Darkmode';
 
 function Toolbar() {
   return (
@@ -16,6 +17,7 @@ function Toolbar() {
     >
       <Announcement />
       <Notification />
+      <Darkmode />
       <User />
     </Stack>
   );

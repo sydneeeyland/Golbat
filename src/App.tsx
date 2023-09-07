@@ -3,13 +3,19 @@ import { Routes, Route } from 'react-router-dom';
 
 import { PageNotFound } from './Pages';
 
-import ApplicationStatus from './Utils/ApplicationStatus';
-import ValidateAuth from './Utils/ValidateAuth';
-import ValidatePermission from './Utils/ValidatePermission';
-
 import { PrivateRoute } from './Routes/Default';
+import Loadable from './Components/Loader/Loadable';
 
-export const Main = lazy(() => import('./Layout/Main'));
+export const ValidateAuth = Loadable(
+  lazy(() => import('./Utils/ValidateAuth'))
+);
+export const ValidatePermission = Loadable(
+  lazy(() => import('./Utils/ValidatePermission'))
+);
+export const ApplicationStatus = Loadable(
+  lazy(() => import('./Utils/ApplicationStatus'))
+);
+export const Main = Loadable(lazy(() => import('./Layout/Main')));
 
 export default function App() {
   return (

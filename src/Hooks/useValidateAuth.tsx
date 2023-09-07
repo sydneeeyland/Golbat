@@ -62,7 +62,7 @@ export default function useValidateAuth() {
           ...prev,
           signedIn: cookie.get('RefreshToken') !== undefined,
         }));
-      }, 2500);
+      }, 2000);
     } else {
       setAuthState((prev) => ({
         ...prev,

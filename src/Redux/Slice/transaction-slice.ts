@@ -7,6 +7,8 @@ export const transaction = createSlice({
     emptybox: [],
     pickups: [],
     invoice: [],
+    country: [],
+    state: [],
   },
   reducers: {
     handleInputChange: (state, { payload }) => {
@@ -14,6 +16,7 @@ export const transaction = createSlice({
         ...state[payload.module as keyof typeof state],
         ...payload,
       };
+      console.log(state.state);
     },
   },
 });

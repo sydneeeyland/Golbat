@@ -11,18 +11,19 @@ import {
 export const application = createSlice({
   name: 'application',
   initialState: {
-    'jp-prefecture': [],
-    'jp-city': [],
-    'jp-town': [],
-    'ph-province': [],
-    'ph-city': [],
-    packinglist: [],
+    pickups: [],
     emptybox: [],
+    packinglist: [],
+    invoice: [],
+    departure: [],
     dispatch: [],
     fleet: [],
     roaming: [],
     telemarketing: [],
-    departure: [],
+    country: [],
+    state: [],
+    city: [],
+    town: [],
     loading: false,
     error: [],
   },
@@ -60,6 +61,7 @@ export const applicationApi = apiSlice.injectEndpoints({
       }),
       async onQueryStarted(_, { queryFulfilled, dispatch }) {
         try {
+          console.log('a');
           dispatch(handleAsyncFetch(true));
           const { data } = await queryFulfilled;
           dispatch(updatePackinglist(data));

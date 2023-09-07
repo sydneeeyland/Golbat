@@ -27,27 +27,7 @@ function Common() {
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <BreadCrumb page="Common" />
       </ErrorBoundary>
-      <FormContainer>
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <Stack direction="row" spacing="3" flexWrap="wrap">
-            <Stack
-              direction="row"
-              gap={2}
-              flexWrap="wrap"
-              flex="1"
-              justifyContent="end"
-            >
-              <ErrorBoundary FallbackComponent={ErrorFallback}>
-                <ModalButton
-                  module="departure"
-                  content={`Create ${TabHeader[value]}`}
-                  maxWidth="lg"
-                />
-              </ErrorBoundary>
-            </Stack>
-          </Stack>
-        </ErrorBoundary>
-      </FormContainer>
+
       <Box sx={{ bgcolor: 'background.paper', borderRadius: '6px' }}>
         <Tabs
           value={value}
@@ -68,6 +48,27 @@ function Common() {
         }}
       >
         <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <FormContainer>
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
+              <Stack direction="row" spacing="3" flexWrap="wrap">
+                <Stack
+                  direction="row"
+                  gap={2}
+                  flexWrap="wrap"
+                  flex="1"
+                  justifyContent="end"
+                >
+                  <ErrorBoundary FallbackComponent={ErrorFallback}>
+                    <ModalButton
+                      module={TabHeader[value].toLocaleLowerCase()}
+                      content={`Create ${TabHeader[value]}`}
+                      maxWidth="lg"
+                    />
+                  </ErrorBoundary>
+                </Stack>
+              </Stack>
+            </ErrorBoundary>
+          </FormContainer>
           <DisplayTab />
         </ErrorBoundary>
       </Box>

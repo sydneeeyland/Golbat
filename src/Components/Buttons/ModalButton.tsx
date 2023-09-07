@@ -24,6 +24,9 @@ function ActionTab({ module, content, maxWidth, variant, icon }: Props) {
     fleet: false,
     departure: false,
     departure_box: false,
+    country: false,
+    state: false,
+    city: false,
   });
 
   const DisplayModal =

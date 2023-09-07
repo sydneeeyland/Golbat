@@ -39,26 +39,26 @@ export default function SignIn() {
     >
       <Grid
         container
-        justifyContent="center"
+        spacing={0}
+        direction="column"
         alignItems="center"
-        flexBasis={1}
-        height="100vh"
+        justifyContent="center"
+        minHeight="100vh"
+        overflow="hidden"
         sx={{ backgroundColor: 'whitesmoke' }}
       >
-        <Grid item>
+        <Grid item xs={12}>
           <Card
             variant="elevation"
             sx={{
-              backgroundColor: 'white',
               color: 'black',
               transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-              margin: '24px',
               overflow: 'hidden',
               position: 'relative',
               border: 'none rgb(230, 235, 241)',
               borderRadius: '6px',
               boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 4px',
-              width: '450px',
+              minWidth: '100%',
             }}
           >
             <Box sx={{ padding: '32px' }}>
@@ -79,7 +79,12 @@ export default function SignIn() {
                 sx={{ marginTop: '24px' }}
               >
                 <Typography>Employee ID</Typography>
-                <Form.Control type="text" ref={userEmail} required />
+                <Form.Control
+                  type="text"
+                  ref={userEmail}
+                  required
+                  disabled={authState.status === 200}
+                />
               </Stack>
               <Stack
                 flexDirection="column"
@@ -87,13 +92,14 @@ export default function SignIn() {
                 sx={{ marginTop: '24px' }}
               >
                 <Typography>Password</Typography>
-                <Form.Control type="password" ref={userPassword} required />
+                <Form.Control
+                  type="password"
+                  ref={userPassword}
+                  required
+                  disabled={authState.status === 200}
+                />
               </Stack>
-              <Stack
-                flexDirection="row"
-                spacing="3px"
-                sx={{ marginTop: '24px' }}
-              >
+              <Stack flexDirection="row" gap="100px" sx={{ marginTop: '24px' }}>
                 <Stack spacing="3px" gap="6px" flexDirection="row">
                   <input type="checkbox" />
                   <Typography>Keep me Signed in</Typography>

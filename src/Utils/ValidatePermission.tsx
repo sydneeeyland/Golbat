@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { NoSsr } from '@mui/material';
 
 import { Unauthorized } from '../Pages';
+import useValidatePermission from '../Hooks/useValidatePermission';
 
 type Props = {
   route: string;
@@ -11,21 +12,11 @@ type Props = {
 
 function ValidatePermission({ route, children }: Props) {
   // TODO: FOR API HANDOFF
-  const permission = [
-    'Dashboard',
-    'Packinglist',
-    'Invoice',
-    'Dispatch & Delivery',
-    'Fleet',
-    'Departure',
-    'Telemarketing',
-    'Accounts',
-    'Common',
-    'UserProfile',
-  ];
+  const { userPermission } = useValidatePermission();
+
   return (
     <NoSsr defer>
-      {permission.includes(route) ? children : <Unauthorized />}
+      {userPermission?.includes(route) ? children : <Unauthorized />}
     </NoSsr>
   );
 }

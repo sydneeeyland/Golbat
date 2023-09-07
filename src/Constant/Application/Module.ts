@@ -6,6 +6,10 @@ export const Module = {
   FLEET: 'fleet',
   DEPARTURE: 'departure',
   DEPARTURE_BOX: 'departure_box',
+  COUNTRY: 'country',
+  STATE: 'state',
+  CITY: 'city',
+  TOWN: 'town'
 };
 
 export const moduleInitialState = {

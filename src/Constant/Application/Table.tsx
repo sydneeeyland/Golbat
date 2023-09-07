@@ -142,4 +142,76 @@ export const tableColumnConfig = {
       header: 'Status',
     },
   ],
+  country: [
+    {
+      accessorKey: 'code',
+      header: 'Code',
+    },
+    {
+      accessorKey: 'name',
+      header: 'Name',
+    },
+  ],
+  state: [
+    {
+      accessorKey: 'country',
+      header: 'Country',
+    },
+    {
+      accessorKey: 'hiragana',
+      header: 'Hiragana',
+    },
+    {
+      accessorKey: 'kanji',
+      header: 'Kanji',
+    },
+    {
+      accessorKey: 'english',
+      header: 'English',
+    },
+  ],
+  city: [
+    {
+      accessorKey: 'state',
+      header: 'State',
+    },
+    {
+      accessorKey: 'hiragana',
+      header: 'Hiragana',
+    },
+    {
+      accessorKey: 'kanji',
+      header: 'Kanji',
+    },
+    {
+      accessorKey: 'english',
+      header: 'English',
+    },
+  ],
+  town: [
+    {
+      accessorKey: 'state',
+      header: 'State',
+    },
+    {
+      accessorKey: 'city',
+      header: 'City',
+    },
+    {
+      accessorKey: 'postalCode',
+      header: 'Postal Code',
+    },
+    {
+      accessorKey: 'hiragana',
+      header: 'Hiragana',
+    },
+    {
+      accessorKey: 'kanji',
+      header: 'Kanji',
+    },
+    {
+      accessorKey: 'english',
+      header: 'English',
+    },
+  ],
 };
